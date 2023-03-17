@@ -35,6 +35,9 @@
 - [fluid-relay](/Commands/fluid-relay/readme.md)
 : Manage Fluid Relay
 
+- [hybrid-connectivity](/Commands/hybrid-connectivity/readme.md)
+: Command group for operations on the Hybrid Connectivity RP.
+
 - [mobile-network](/Commands/mobile-network/readme.md)
 : Manage mobile network
 
