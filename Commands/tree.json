@@ -8160,6 +8160,159 @@
           "fluid-relay"
         ]
       },
+      "hybrid-connectivity": {
+        "commandGroups": {
+          "endpoint": {
+            "commands": {
+              "create": {
+                "help": {
+                  "short": "Create the endpoint to the target resource."
+                },
+                "names": [
+                  "hybrid-connectivity",
+                  "endpoint",
+                  "create"
+                ],
+                "versions": [
+                  {
+                    "name": "2022-05-01-preview",
+                    "resources": [
+                      {
+                        "id": "/{resourceuri}/providers/microsoft.hybridconnectivity/endpoints/{}",
+                        "plane": "mgmt-plane",
+                        "version": "2022-05-01-preview"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "delete": {
+                "help": {
+                  "short": "Delete the endpoint access to the target resource."
+                },
+                "names": [
+                  "hybrid-connectivity",
+                  "endpoint",
+                  "delete"
+                ],
+                "versions": [
+                  {
+                    "name": "2022-05-01-preview",
+                    "resources": [
+                      {
+                        "id": "/{resourceuri}/providers/microsoft.hybridconnectivity/endpoints/{}",
+                        "plane": "mgmt-plane",
+                        "version": "2022-05-01-preview"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "list": {
+                "help": {
+                  "short": "List of endpoints to the target resource."
+                },
+                "names": [
+                  "hybrid-connectivity",
+                  "endpoint",
+                  "list"
+                ],
+                "versions": [
+                  {
+                    "name": "2022-05-01-preview",
+                    "resources": [
+                      {
+                        "id": "/{resourceuri}/providers/microsoft.hybridconnectivity/endpoints",
+                        "plane": "mgmt-plane",
+                        "version": "2022-05-01-preview"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "list-credential": {
+                "help": {
+                  "short": "Gets the endpoint access credentials to the resource."
+                },
+                "names": [
+                  "hybrid-connectivity",
+                  "endpoint",
+                  "list-credential"
+                ],
+                "versions": [
+                  {
+                    "name": "2022-05-01-preview",
+                    "resources": [
+                      {
+                        "id": "/{resourceuri}/providers/microsoft.hybridconnectivity/endpoints/{}/listcredentials",
+                        "plane": "mgmt-plane",
+                        "version": "2022-05-01-preview"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "show": {
+                "help": {
+                  "short": "Get the endpoint to the resource."
+                },
+                "names": [
+                  "hybrid-connectivity",
+                  "endpoint",
+                  "show"
+                ],
+                "versions": [
+                  {
+                    "name": "2022-05-01-preview",
+                    "resources": [
+                      {
+                        "id": "/{resourceuri}/providers/microsoft.hybridconnectivity/endpoints/{}",
+                        "plane": "mgmt-plane",
+                        "version": "2022-05-01-preview"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "update": {
+                "help": {
+                  "short": "Update the endpoint to the target resource."
+                },
+                "names": [
+                  "hybrid-connectivity",
+                  "endpoint",
+                  "update"
+                ],
+                "versions": [
+                  {
+                    "name": "2022-05-01-preview",
+                    "resources": [
+                      {
+                        "id": "/{resourceuri}/providers/microsoft.hybridconnectivity/endpoints/{}",
+                        "plane": "mgmt-plane",
+                        "version": "2022-05-01-preview"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "help": {
+              "short": "Endpoint Operations on Hybrid Connectivity RP"
+            },
+            "names": [
+              "hybrid-connectivity",
+              "endpoint"
+            ]
+          }
+        },
+        "help": {
+          "short": "Command group for operations on the Hybrid Connectivity RP."
+        },
+        "names": [
+          "hybrid-connectivity"
+        ]
+      },
       "mobile-network": {
         "commandGroups": {
           "attached-data-network": {
