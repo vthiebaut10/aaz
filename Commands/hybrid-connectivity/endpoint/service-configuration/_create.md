@@ -1,0 +1,9 @@
+# [Command] _hybrid-connectivity endpoint service-configuration create_
+
+Create a service in serviceConfiguration for the endpoint resource.
+
+## Versions
+
+### [2023-03-15](/Resources/mgmt-plane/L3tyZXNvdXJjZXVyaX0vcHJvdmlkZXJzL21pY3Jvc29mdC5oeWJyaWRjb25uZWN0aXZpdHkvZW5kcG9pbnRzL3t9L3NlcnZpY2Vjb25maWd1cmF0aW9ucy97fQ==/2023-03-15.xml) **Stable**
+
+<!-- mgmt-plane /{resourceuri}/providers/microsoft.hybridconnectivity/endpoints/{}/serviceconfigurations/{} 2023-03-15 -->

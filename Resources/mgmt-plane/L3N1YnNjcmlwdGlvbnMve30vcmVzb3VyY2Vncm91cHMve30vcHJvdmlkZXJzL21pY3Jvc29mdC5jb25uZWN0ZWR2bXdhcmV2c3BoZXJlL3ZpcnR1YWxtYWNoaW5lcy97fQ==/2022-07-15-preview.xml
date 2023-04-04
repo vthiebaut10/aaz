@@ -1,0 +1,1827 @@
+<?xml version='1.0' encoding='utf-8'?>
+<CodeGen plane="mgmt-plane">
+  <resource id="/subscriptions/{}/resourcegroups/{}/providers/microsoft.connectedvmwarevsphere/virtualmachines/{}" version="2022-07-15-preview" swagger="mgmt-plane/connectedvmware/ResourceProviders/Microsoft.ConnectedVMwarevSphere/Paths/L3N1YnNjcmlwdGlvbnMve3N1YnNjcmlwdGlvbklkfS9yZXNvdXJjZUdyb3Vwcy97cmVzb3VyY2VHcm91cE5hbWV9L3Byb3ZpZGVycy9NaWNyb3NvZnQuQ29ubmVjdGVkVk13YXJldlNwaGVyZS92aXJ0dWFsTWFjaGluZXMve3ZpcnR1YWxNYWNoaW5lTmFtZX0=/V/MjAyMi0wNy0xNS1wcmV2aWV3"/>
+  <commandGroup name="connected-v-mwarev-sphere virtual-machine">
+    <command name="show" version="2022-07-15-preview">
+      <resource id="/subscriptions/{}/resourcegroups/{}/providers/microsoft.connectedvmwarevsphere/virtualmachines/{}" version="2022-07-15-preview" swagger="mgmt-plane/connectedvmware/ResourceProviders/Microsoft.ConnectedVMwarevSphere/Paths/L3N1YnNjcmlwdGlvbnMve3N1YnNjcmlwdGlvbklkfS9yZXNvdXJjZUdyb3Vwcy97cmVzb3VyY2VHcm91cE5hbWV9L3Byb3ZpZGVycy9NaWNyb3NvZnQuQ29ubmVjdGVkVk13YXJldlNwaGVyZS92aXJ0dWFsTWFjaGluZXMve3ZpcnR1YWxNYWNoaW5lTmFtZX0=/V/MjAyMi0wNy0xNS1wcmV2aWV3"/>
+      <argGroup name="">
+        <arg type="ResourceGroupName" var="$Path.resourceGroupName" options="resource-group g" required="True" idPart="resource_group"/>
+        <arg type="SubscriptionId" var="$Path.subscriptionId" options="subscription" required="True" idPart="subscription"/>
+        <arg type="string" var="$Path.virtualMachineName" options="virtual-machine-name name n" required="True" idPart="name">
+          <help short="Name of the virtual machine resource."/>
+        </arg>
+      </argGroup>
+      <operation operationId="VirtualMachines_Get">
+        <http path="/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ConnectedVMwarevSphere/virtualMachines/{virtualMachineName}">
+          <request method="get">
+            <path>
+              <param type="string" name="resourceGroupName" arg="$Path.resourceGroupName" required="True"/>
+              <param type="string" name="subscriptionId" arg="$Path.subscriptionId" required="True"/>
+              <param type="string" name="virtualMachineName" arg="$Path.virtualMachineName" required="True"/>
+            </path>
+            <query>
+              <const readOnly="True" const="True" type="string" name="api-version" required="True">
+                <default value="&quot;2022-07-15-preview&quot;"/>
+              </const>
+            </query>
+          </request>
+          <response statusCode="200">
+            <body>
+              <json var="$Instance">
+                <schema type="object">
+                  <prop type="object" name="extendedLocation">
+                    <prop type="string" name="name"/>
+                    <prop type="string" name="type"/>
+                  </prop>
+                  <prop readOnly="True" type="ResourceId" name="id">
+                    <format template="/subscriptions/{}/resourceGroups/{}/providers/Microsoft.ConnectedVMwarevSphere/virtualMachines/{}"/>
+                  </prop>
+                  <prop type="object" name="identity">
+                    <prop readOnly="True" type="string" name="principalId"/>
+                    <prop readOnly="True" type="string" name="tenantId"/>
+                    <prop type="string" name="type" required="True">
+                      <enum>
+                        <item value="&quot;None&quot;"/>
+                        <item value="&quot;SystemAssigned&quot;"/>
+                      </enum>
+                    </prop>
+                  </prop>
+                  <prop type="string" name="kind"/>
+                  <prop type="ResourceLocation" name="location" required="True"/>
+                  <prop readOnly="True" type="string" name="name"/>
+                  <prop type="object" name="properties" required="True" clientFlatten="True">
+                    <prop readOnly="True" type="string" name="customResourceName"/>
+                    <prop type="string" name="firmwareType">
+                      <enum>
+                        <item value="&quot;bios&quot;"/>
+                        <item value="&quot;efi&quot;"/>
+                      </enum>
+                    </prop>
+                    <prop readOnly="True" type="string" name="folderPath"/>
+                    <prop type="object" name="guestAgentProfile">
+                      <prop readOnly="True" type="string" name="agentVersion"/>
+                      <prop type="string" name="clientPublicKey"/>
+                      <prop readOnly="True" type="array<object>" name="errorDetails">
+                        <item type="object" cls="ErrorDetail_read">
+                          <prop readOnly="True" type="array<object>" name="additionalInfo">
+                            <item type="object">
+                              <prop readOnly="True" type="string" name="type"/>
+                            </item>
+                          </prop>
+                          <prop readOnly="True" type="string" name="code"/>
+                          <prop readOnly="True" type="array<@ErrorDetail_read>" name="details" identifiers="message target">
+                            <item type="@ErrorDetail_read"/>
+                          </prop>
+                          <prop readOnly="True" type="string" name="message"/>
+                          <prop readOnly="True" type="string" name="target"/>
+                        </item>
+                      </prop>
+                      <prop readOnly="True" type="dateTime" name="lastStatusChange"/>
+                      <prop readOnly="True" type="string" name="mssqlDiscovered"/>
+                      <prop readOnly="True" type="string" name="status">
+                        <enum>
+                          <item value="&quot;Connected&quot;"/>
+                          <item value="&quot;Disconnected&quot;"/>
+                          <item value="&quot;Error&quot;"/>
+                        </enum>
+                      </prop>
+                      <prop readOnly="True" type="string" name="vmUuid"/>
+                    </prop>
+                    <prop type="object" name="hardwareProfile">
+                      <prop readOnly="True" type="boolean" name="cpuHotAddEnabled"/>
+                      <prop readOnly="True" type="boolean" name="cpuHotRemoveEnabled"/>
+                      <prop readOnly="True" type="boolean" name="memoryHotAddEnabled"/>
+                      <prop type="integer32" name="memorySizeMB"/>
+                      <prop type="integer32" name="numCPUs"/>
+                      <prop type="integer32" name="numCoresPerSocket"/>
+                    </prop>
+                    <prop readOnly="True" type="string" name="instanceUuid"/>
+                    <prop type="string" name="inventoryItemId"/>
+                    <prop readOnly="True" type="string" name="moName"/>
+                    <prop type="string" name="moRefId"/>
+                    <prop type="object" name="networkProfile">
+                      <prop type="array<object>" name="networkInterfaces">
+                        <item type="object">
+                          <prop type="integer32" name="deviceKey"/>
+                          <prop readOnly="True" type="array<string>" name="ipAddresses">
+                            <item type="string"/>
+                          </prop>
+                          <prop type="object" name="ipSettings">
+                            <prop type="string" name="allocationMethod">
+                              <enum>
+                                <item value="&quot;dynamic&quot;"/>
+                                <item value="&quot;linklayer&quot;"/>
+                                <item value="&quot;other&quot;"/>
+                                <item value="&quot;random&quot;"/>
+                                <item value="&quot;static&quot;"/>
+                                <item value="&quot;unset&quot;"/>
+                              </enum>
+                            </prop>
+                            <prop type="array<string>" name="dnsServers">
+                              <item type="string"/>
+                            </prop>
+                            <prop type="array<string>" name="gateway">
+                              <item type="string"/>
+                            </prop>
+                            <prop type="string" name="ipAddress"/>
+                            <prop readOnly="True" type="array<object>" name="ipAddressInfo">
+                              <item type="object">
+                                <prop readOnly="True" type="string" name="allocationMethod"/>
+                                <prop readOnly="True" type="string" name="ipAddress"/>
+                                <prop readOnly="True" type="string" name="subnetMask"/>
+                              </item>
+                            </prop>
+                            <prop readOnly="True" type="string" name="primaryWinsServer"/>
+                            <prop readOnly="True" type="string" name="secondaryWinsServer"/>
+                            <prop type="string" name="subnetMask"/>
+                          </prop>
+                          <prop readOnly="True" type="string" name="label"/>
+                          <prop readOnly="True" type="string" name="macAddress"/>
+                          <prop type="string" name="name"/>
+                          <prop type="string" name="networkId"/>
+                          <prop readOnly="True" type="string" name="networkMoName"/>
+                          <prop readOnly="True" type="string" name="networkMoRefId"/>
+                          <prop type="string" name="nicType">
+                            <enum>
+                              <item value="&quot;e1000&quot;"/>
+                              <item value="&quot;e1000e&quot;"/>
+                              <item value="&quot;pcnet32&quot;"/>
+                              <item value="&quot;vmxnet&quot;"/>
+                              <item value="&quot;vmxnet2&quot;"/>
+                              <item value="&quot;vmxnet3&quot;"/>
+                            </enum>
+                          </prop>
+                          <prop type="string" name="powerOnBoot">
+                            <enum>
+                              <item value="&quot;disabled&quot;"/>
+                              <item value="&quot;enabled&quot;"/>
+                            </enum>
+                          </prop>
+                        </item>
+                      </prop>
+                    </prop>
+                    <prop type="object" name="osProfile">
+                      <prop type="string" name="adminUsername"/>
+                      <prop readOnly="True" type="boolean" name="allowExtensionOperations"/>
+                      <prop type="string" name="computerName"/>
+                      <prop type="string" name="guestId"/>
+                      <prop type="object" name="linuxConfiguration">
+                        <prop type="@PatchSettings_read" name="patchSettings" clientFlatten="True"/>
+                      </prop>
+                      <prop readOnly="True" type="string" name="osName"/>
+                      <prop type="string" name="osType">
+                        <enum>
+                          <item value="&quot;Linux&quot;"/>
+                          <item value="&quot;Other&quot;"/>
+                          <item value="&quot;Windows&quot;"/>
+                        </enum>
+                      </prop>
+                      <prop readOnly="True" type="string" name="toolsRunningStatus"/>
+                      <prop readOnly="True" type="string" name="toolsVersion"/>
+                      <prop readOnly="True" type="string" name="toolsVersionStatus"/>
+                      <prop type="object" name="windowsConfiguration">
+                        <prop type="object" name="patchSettings" cls="PatchSettings_read" clientFlatten="True">
+                          <prop type="string" name="assessmentMode"/>
+                          <prop type="string" name="patchMode"/>
+                        </prop>
+                      </prop>
+                    </prop>
+                    <prop type="object" name="placementProfile">
+                      <prop type="string" name="clusterId"/>
+                      <prop type="string" name="datastoreId"/>
+                      <prop type="string" name="hostId"/>
+                      <prop type="string" name="resourcePoolId"/>
+                    </prop>
+                    <prop readOnly="True" type="string" name="powerState"/>
+                    <prop readOnly="True" type="string" name="provisioningState"/>
+                    <prop type="string" name="resourcePoolId"/>
+                    <prop type="object" name="securityProfile">
+                      <prop type="object" name="uefiSettings">
+                        <prop type="boolean" name="secureBootEnabled"/>
+                      </prop>
+                    </prop>
+                    <prop type="string" name="smbiosUuid"/>
+                    <prop readOnly="True" type="array<object>" name="statuses">
+                      <item type="object">
+                        <prop readOnly="True" type="dateTime" name="lastUpdatedAt"/>
+                        <prop readOnly="True" type="string" name="message"/>
+                        <prop readOnly="True" type="string" name="reason"/>
+                        <prop readOnly="True" type="string" name="severity"/>
+                        <prop readOnly="True" type="string" name="status"/>
+                        <prop readOnly="True" type="string" name="type"/>
+                      </item>
+                    </prop>
+                    <prop type="object" name="storageProfile">
+                      <prop type="array<object>" name="disks">
+                        <item type="object">
+                          <prop type="integer32" name="controllerKey"/>
+                          <prop type="integer32" name="deviceKey"/>
+                          <prop type="string" name="deviceName"/>
+                          <prop type="string" name="diskMode">
+                            <enum>
+                              <item value="&quot;independent_nonpersistent&quot;"/>
+                              <item value="&quot;independent_persistent&quot;"/>
+                              <item value="&quot;persistent&quot;"/>
+                            </enum>
+                          </prop>
+                          <prop readOnly="True" type="string" name="diskObjectId"/>
+                          <prop type="integer32" name="diskSizeGB"/>
+                          <prop type="string" name="diskType">
+                            <enum>
+                              <item value="&quot;flat&quot;"/>
+                              <item value="&quot;pmem&quot;"/>
+                              <item value="&quot;rawphysical&quot;"/>
+                              <item value="&quot;rawvirtual&quot;"/>
+                              <item value="&quot;sesparse&quot;"/>
+                              <item value="&quot;sparse&quot;"/>
+                              <item value="&quot;unknown&quot;"/>
+                            </enum>
+                          </prop>
+                          <prop readOnly="True" type="string" name="label"/>
+                          <prop type="string" name="name"/>
+                          <prop type="integer32" name="unitNumber"/>
+                        </item>
+                      </prop>
+                      <prop readOnly="True" type="array<object>" name="scsiControllers">
+                        <item type="object">
+                          <prop type="integer32" name="busNumber"/>
+                          <prop type="integer32" name="controllerKey"/>
+                          <prop type="integer32" name="scsiCtlrUnitNumber"/>
+                          <prop type="string" name="sharing">
+                            <enum>
+                              <item value="&quot;noSharing&quot;"/>
+                              <item value="&quot;physicalSharing&quot;"/>
+                              <item value="&quot;virtualSharing&quot;"/>
+                            </enum>
+                          </prop>
+                          <prop type="string" name="type">
+                            <enum>
+                              <item value="&quot;buslogic&quot;"/>
+                              <item value="&quot;lsilogic&quot;"/>
+                              <item value="&quot;lsilogicsas&quot;"/>
+                              <item value="&quot;pvscsi&quot;"/>
+                            </enum>
+                          </prop>
+                        </item>
+                      </prop>
+                    </prop>
+                    <prop type="string" name="templateId"/>
+                    <prop readOnly="True" type="string" name="uuid"/>
+                    <prop type="string" name="vCenterId"/>
+                    <prop readOnly="True" type="string" name="vmId"/>
+                  </prop>
+                  <prop readOnly="True" type="object" name="systemData">
+                    <prop type="dateTime" name="createdAt"/>
+                    <prop type="string" name="createdBy"/>
+                    <prop type="string" name="createdByType">
+                      <enum>
+                        <item value="&quot;Application&quot;"/>
+                        <item value="&quot;Key&quot;"/>
+                        <item value="&quot;ManagedIdentity&quot;"/>
+                        <item value="&quot;User&quot;"/>
+                      </enum>
+                    </prop>
+                    <prop type="dateTime" name="lastModifiedAt"/>
+                    <prop type="string" name="lastModifiedBy"/>
+                    <prop type="string" name="lastModifiedByType">
+                      <enum>
+                        <item value="&quot;Application&quot;"/>
+                        <item value="&quot;Key&quot;"/>
+                        <item value="&quot;ManagedIdentity&quot;"/>
+                        <item value="&quot;User&quot;"/>
+                      </enum>
+                    </prop>
+                  </prop>
+                  <prop type="object" name="tags">
+                    <additionalProp>
+                      <item type="string"/>
+                    </additionalProp>
+                  </prop>
+                  <prop readOnly="True" type="string" name="type"/>
+                </schema>
+              </json>
+            </body>
+          </response>
+          <response isError="True">
+            <body>
+              <json>
+                <schema type="@MgmtErrorFormat"/>
+              </json>
+            </body>
+          </response>
+        </http>
+      </operation>
+      <output type="object" ref="$Instance" clientFlatten="True"/>
+    </command>
+    <command name="delete" version="2022-07-15-preview" confirmation="Are you sure you want to perform this operation?">
+      <resource id="/subscriptions/{}/resourcegroups/{}/providers/microsoft.connectedvmwarevsphere/virtualmachines/{}" version="2022-07-15-preview" swagger="mgmt-plane/connectedvmware/ResourceProviders/Microsoft.ConnectedVMwarevSphere/Paths/L3N1YnNjcmlwdGlvbnMve3N1YnNjcmlwdGlvbklkfS9yZXNvdXJjZUdyb3Vwcy97cmVzb3VyY2VHcm91cE5hbWV9L3Byb3ZpZGVycy9NaWNyb3NvZnQuQ29ubmVjdGVkVk13YXJldlNwaGVyZS92aXJ0dWFsTWFjaGluZXMve3ZpcnR1YWxNYWNoaW5lTmFtZX0=/V/MjAyMi0wNy0xNS1wcmV2aWV3"/>
+      <argGroup name="">
+        <arg type="ResourceGroupName" var="$Path.resourceGroupName" options="resource-group g" required="True" idPart="resource_group"/>
+        <arg type="SubscriptionId" var="$Path.subscriptionId" options="subscription" required="True" idPart="subscription"/>
+        <arg type="string" var="$Path.virtualMachineName" options="virtual-machine-name name n" required="True" idPart="name">
+          <help short="Name of the virtual machine resource."/>
+        </arg>
+        <arg type="boolean" var="$Query.force" options="force">
+          <help short="Whether force delete was specified."/>
+        </arg>
+        <arg type="boolean" var="$Query.retain" options="retain">
+          <help short="Whether to just disable the VM from azure and retain the VM in the VMM."/>
+        </arg>
+      </argGroup>
+      <operation operationId="VirtualMachines_Delete">
+        <longRunning finalStateVia="azure-async-operation"/>
+        <http path="/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ConnectedVMwarevSphere/virtualMachines/{virtualMachineName}">
+          <request method="delete">
+            <path>
+              <param type="string" name="resourceGroupName" arg="$Path.resourceGroupName" required="True"/>
+              <param type="string" name="subscriptionId" arg="$Path.subscriptionId" required="True"/>
+              <param type="string" name="virtualMachineName" arg="$Path.virtualMachineName" required="True"/>
+            </path>
+            <query>
+              <param type="boolean" name="force" arg="$Query.force"/>
+              <param type="boolean" name="retain" arg="$Query.retain"/>
+              <const readOnly="True" const="True" type="string" name="api-version" required="True">
+                <default value="&quot;2022-07-15-preview&quot;"/>
+              </const>
+            </query>
+          </request>
+          <response statusCode="200"/>
+          <response statusCode="202"/>
+          <response statusCode="204"/>
+          <response isError="True">
+            <body>
+              <json>
+                <schema type="@MgmtErrorFormat"/>
+              </json>
+            </body>
+          </response>
+        </http>
+      </operation>
+    </command>
+    <command name="create" version="2022-07-15-preview">
+      <resource id="/subscriptions/{}/resourcegroups/{}/providers/microsoft.connectedvmwarevsphere/virtualmachines/{}" version="2022-07-15-preview" swagger="mgmt-plane/connectedvmware/ResourceProviders/Microsoft.ConnectedVMwarevSphere/Paths/L3N1YnNjcmlwdGlvbnMve3N1YnNjcmlwdGlvbklkfS9yZXNvdXJjZUdyb3Vwcy97cmVzb3VyY2VHcm91cE5hbWV9L3Byb3ZpZGVycy9NaWNyb3NvZnQuQ29ubmVjdGVkVk13YXJldlNwaGVyZS92aXJ0dWFsTWFjaGluZXMve3ZpcnR1YWxNYWNoaW5lTmFtZX0=/V/MjAyMi0wNy0xNS1wcmV2aWV3"/>
+      <argGroup name="">
+        <arg type="ResourceGroupName" var="$Path.resourceGroupName" options="resource-group g" required="True" idPart="resource_group"/>
+        <arg type="SubscriptionId" var="$Path.subscriptionId" options="subscription" required="True" idPart="subscription"/>
+        <arg type="string" var="$Path.virtualMachineName" options="virtual-machine-name name n" required="True" idPart="name">
+          <help short="Name of the virtual machine resource."/>
+        </arg>
+      </argGroup>
+      <argGroup name="Body">
+        <arg type="object" var="$body.extendedLocation" options="extended-location" group="Body">
+          <help short="Gets or sets the extended location."/>
+          <arg type="string" var="$body.extendedLocation.name" options="name">
+            <help short="The extended location name."/>
+          </arg>
+          <arg type="string" var="$body.extendedLocation.type" options="type">
+            <help short="The extended location type."/>
+          </arg>
+        </arg>
+        <arg type="object" var="$body.identity" options="identity" group="Body">
+          <help short="The identity of the resource."/>
+          <arg type="string" var="$body.identity.type" options="type" required="True">
+            <help short="The type of managed service identity."/>
+            <enum>
+              <item name="None" value="&quot;None&quot;"/>
+              <item name="SystemAssigned" value="&quot;SystemAssigned&quot;"/>
+            </enum>
+          </arg>
+        </arg>
+        <arg type="string" var="$body.kind" options="kind" group="Body">
+          <help short="Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value."/>
+        </arg>
+        <arg type="ResourceLocation" var="$body.location" options="location l" group="Body">
+          <help short="Gets or sets the location."/>
+        </arg>
+        <arg type="object" var="$body.tags" options="tags" group="Body">
+          <help short="Gets or sets the Resource tags."/>
+          <additionalProp>
+            <item type="string"/>
+          </additionalProp>
+        </arg>
+      </argGroup>
+      <argGroup name="Properties">
+        <arg type="string" var="$body.properties.firmwareType" options="firmware-type" group="Properties">
+          <help short="Firmware type"/>
+          <enum>
+            <item name="bios" value="&quot;bios&quot;"/>
+            <item name="efi" value="&quot;efi&quot;"/>
+          </enum>
+        </arg>
+        <arg type="object" var="$body.properties.guestAgentProfile" options="guest-agent-profile" group="Properties">
+          <help short="Guest agent status properties."/>
+          <arg type="string" var="$body.properties.guestAgentProfile.clientPublicKey" options="client-public-key">
+            <help short="Gets or sets the Public Key provided by the client for enabling guest management."/>
+          </arg>
+        </arg>
+        <arg type="object" var="$body.properties.hardwareProfile" options="hardware-profile" group="Properties">
+          <help short="Hardware properties."/>
+          <arg type="integer32" var="$body.properties.hardwareProfile.memorySizeMB" options="memory-size-mb">
+            <help short="Gets or sets memory size in MBs for the vm."/>
+          </arg>
+          <arg type="integer32" var="$body.properties.hardwareProfile.numCPUs" options="num-cp-us">
+            <help short="Gets or sets the number of vCPUs for the vm."/>
+          </arg>
+          <arg type="integer32" var="$body.properties.hardwareProfile.numCoresPerSocket" options="num-cores-per-socket">
+            <help short="Gets or sets the number of cores per socket for the vm. Defaults to 1 if unspecified."/>
+          </arg>
+        </arg>
+        <arg type="string" var="$body.properties.inventoryItemId" options="inventory-item-id" group="Properties">
+          <help short="Gets or sets the inventory Item ID for the virtual machine."/>
+        </arg>
+        <arg type="string" var="$body.properties.moRefId" options="mo-ref-id" group="Properties">
+          <help short="Gets or sets the vCenter MoRef (Managed Object Reference) ID for the virtual machine."/>
+        </arg>
+        <arg type="object" var="$body.properties.networkProfile" options="network-profile" group="Properties">
+          <help short="Network properties."/>
+          <arg type="array<object>" var="$body.properties.networkProfile.networkInterfaces" options="network-interfaces">
+            <help short="Gets or sets the list of network interfaces associated with the virtual machine."/>
+            <item type="object">
+              <arg type="integer32" var="$body.properties.networkProfile.networkInterfaces[].deviceKey" options="device-key">
+                <help short="Gets or sets the device key value."/>
+              </arg>
+              <arg type="object" var="$body.properties.networkProfile.networkInterfaces[].ipSettings" options="ip-settings">
+                <help short="Gets or sets the ipsettings."/>
+                <arg type="string" var="$body.properties.networkProfile.networkInterfaces[].ipSettings.allocationMethod" options="allocation-method">
+                  <help short="Gets or sets the nic allocation method."/>
+                  <enum>
+                    <item name="dynamic" value="&quot;dynamic&quot;"/>
+                    <item name="linklayer" value="&quot;linklayer&quot;"/>
+                    <item name="other" value="&quot;other&quot;"/>
+                    <item name="random" value="&quot;random&quot;"/>
+                    <item name="static" value="&quot;static&quot;"/>
+                    <item name="unset" value="&quot;unset&quot;"/>
+                  </enum>
+                </arg>
+                <arg type="array<string>" var="$body.properties.networkProfile.networkInterfaces[].ipSettings.dnsServers" options="dns-servers">
+                  <help short="Gets or sets the dns servers."/>
+                  <item type="string"/>
+                </arg>
+                <arg type="array<string>" var="$body.properties.networkProfile.networkInterfaces[].ipSettings.gateway" options="gateway">
+                  <help short="Gets or sets the gateway."/>
+                  <item type="string"/>
+                </arg>
+                <arg type="string" var="$body.properties.networkProfile.networkInterfaces[].ipSettings.ipAddress" options="ip-address">
+                  <help short="Gets or sets the ip address for the nic."/>
+                </arg>
+                <arg type="string" var="$body.properties.networkProfile.networkInterfaces[].ipSettings.subnetMask" options="subnet-mask">
+                  <help short="Gets or sets the mask."/>
+                </arg>
+              </arg>
+              <arg type="string" var="$body.properties.networkProfile.networkInterfaces[].name" options="name">
+                <help short="Gets or sets the name of the network interface."/>
+              </arg>
+              <arg type="string" var="$body.properties.networkProfile.networkInterfaces[].networkId" options="network-id">
+                <help short="Gets or sets the ARM Id of the network resource to connect the virtual machine."/>
+              </arg>
+              <arg type="string" var="$body.properties.networkProfile.networkInterfaces[].nicType" options="nic-type">
+                <help short="NIC type"/>
+                <enum>
+                  <item name="e1000" value="&quot;e1000&quot;"/>
+                  <item name="e1000e" value="&quot;e1000e&quot;"/>
+                  <item name="pcnet32" value="&quot;pcnet32&quot;"/>
+                  <item name="vmxnet" value="&quot;vmxnet&quot;"/>
+                  <item name="vmxnet2" value="&quot;vmxnet2&quot;"/>
+                  <item name="vmxnet3" value="&quot;vmxnet3&quot;"/>
+                </enum>
+              </arg>
+              <arg type="string" var="$body.properties.networkProfile.networkInterfaces[].powerOnBoot" options="power-on-boot">
+                <help short="Gets or sets the power on boot."/>
+                <enum>
+                  <item name="disabled" value="&quot;disabled&quot;"/>
+                  <item name="enabled" value="&quot;enabled&quot;"/>
+                </enum>
+              </arg>
+            </item>
+          </arg>
+        </arg>
+        <arg type="object" var="$body.properties.osProfile" options="os-profile" group="Properties">
+          <help short="OS properties."/>
+          <arg type="string" var="$body.properties.osProfile.adminPassword" options="admin-password">
+            <help short="Gets or sets administrator password."/>
+          </arg>
+          <arg type="string" var="$body.properties.osProfile.adminUsername" options="admin-username">
+            <help short="Gets or sets administrator username."/>
+          </arg>
+          <arg type="string" var="$body.properties.osProfile.computerName" options="computer-name">
+            <help short="Gets or sets computer name."/>
+          </arg>
+          <arg type="string" var="$body.properties.osProfile.guestId" options="guest-id">
+            <help short="Gets or sets the guestId."/>
+          </arg>
+          <arg type="object" var="$body.properties.osProfile.linuxConfiguration" options="linux-configuration">
+            <help short="Specifies the linux configuration for update management."/>
+            <arg type="@PatchSettings_create" var="$body.properties.osProfile.linuxConfiguration.patchSettings" options="patch-settings"/>
+          </arg>
+          <arg type="string" var="$body.properties.osProfile.osType" options="os-type">
+            <help short="Gets or sets the type of the os."/>
+            <enum>
+              <item name="Linux" value="&quot;Linux&quot;"/>
+              <item name="Other" value="&quot;Other&quot;"/>
+              <item name="Windows" value="&quot;Windows&quot;"/>
+            </enum>
+          </arg>
+          <arg type="object" var="$body.properties.osProfile.windowsConfiguration" options="windows-configuration">
+            <help short="Specifies the windows configuration for update management."/>
+            <arg type="object" var="$body.properties.osProfile.windowsConfiguration.patchSettings" options="patch-settings" cls="PatchSettings_create">
+              <help short="Specifies the patch settings."/>
+              <arg type="string" var="@PatchSettings_create.assessmentMode" options="assessment-mode">
+                <help short="Specifies the assessment mode."/>
+              </arg>
+              <arg type="string" var="@PatchSettings_create.patchMode" options="patch-mode">
+                <help short="Specifies the patch mode."/>
+              </arg>
+            </arg>
+          </arg>
+        </arg>
+        <arg type="object" var="$body.properties.placementProfile" options="placement-profile" group="Properties">
+          <help short="Placement properties."/>
+          <arg type="string" var="$body.properties.placementProfile.clusterId" options="cluster-id">
+            <help short="Gets or sets the ARM Id of the cluster resource on which this virtual machine will deploy."/>
+          </arg>
+          <arg type="string" var="$body.properties.placementProfile.datastoreId" options="datastore-id">
+            <help short="Gets or sets the ARM Id of the datastore resource on which the data for the virtual machine will be kept."/>
+          </arg>
+          <arg type="string" var="$body.properties.placementProfile.hostId" options="host-id">
+            <help short="Gets or sets the ARM Id of the host resource on which this virtual machine will deploy."/>
+          </arg>
+          <arg type="string" var="$body.properties.placementProfile.resourcePoolId" options="resource-pool-id">
+            <help short="Gets or sets the ARM Id of the resourcePool resource on which this virtual machine will deploy."/>
+          </arg>
+        </arg>
+        <arg type="string" var="$body.properties.resourcePoolId" options="resource-pool-id" group="Properties">
+          <help short="Gets or sets the ARM Id of the resourcePool resource on which this virtual machine will&#13; deploy."/>
+        </arg>
+        <arg type="object" var="$body.properties.securityProfile" options="security-profile" group="Properties">
+          <help short="Gets the security profile."/>
+          <arg type="object" var="$body.properties.securityProfile.uefiSettings" options="uefi-settings">
+            <help short="Specifies the security settings like secure boot used while creating the virtual machine."/>
+            <arg type="boolean" var="$body.properties.securityProfile.uefiSettings.secureBootEnabled" options="secure-boot-enabled">
+              <help short="Specifies whether secure boot should be enabled on the virtual machine."/>
+            </arg>
+          </arg>
+        </arg>
+        <arg type="string" var="$body.properties.smbiosUuid" options="smbios-uuid" group="Properties">
+          <help short="Gets or sets the SMBIOS UUID of the vm."/>
+        </arg>
+        <arg type="object" var="$body.properties.storageProfile" options="storage-profile" group="Properties">
+          <help short="Storage properties."/>
+          <arg type="array<object>" var="$body.properties.storageProfile.disks" options="disks">
+            <help short="Gets or sets the list of virtual disks associated with the virtual machine."/>
+            <item type="object">
+              <arg type="integer32" var="$body.properties.storageProfile.disks[].controllerKey" options="controller-key">
+                <help short="Gets or sets the controller id."/>
+              </arg>
+              <arg type="integer32" var="$body.properties.storageProfile.disks[].deviceKey" options="device-key">
+                <help short="Gets or sets the device key value."/>
+              </arg>
+              <arg type="string" var="$body.properties.storageProfile.disks[].deviceName" options="device-name">
+                <help short="Gets or sets the device name."/>
+              </arg>
+              <arg type="string" var="$body.properties.storageProfile.disks[].diskMode" options="disk-mode">
+                <help short="Gets or sets the disk mode."/>
+                <enum>
+                  <item name="independent_nonpersistent" value="&quot;independent_nonpersistent&quot;"/>
+                  <item name="independent_persistent" value="&quot;independent_persistent&quot;"/>
+                  <item name="persistent" value="&quot;persistent&quot;"/>
+                </enum>
+              </arg>
+              <arg type="integer32" var="$body.properties.storageProfile.disks[].diskSizeGB" options="disk-size-gb">
+                <help short="Gets or sets the disk total size."/>
+              </arg>
+              <arg type="string" var="$body.properties.storageProfile.disks[].diskType" options="disk-type">
+                <help short="Gets or sets the disk backing type."/>
+                <enum>
+                  <item name="flat" value="&quot;flat&quot;"/>
+                  <item name="pmem" value="&quot;pmem&quot;"/>
+                  <item name="rawphysical" value="&quot;rawphysical&quot;"/>
+                  <item name="rawvirtual" value="&quot;rawvirtual&quot;"/>
+                  <item name="sesparse" value="&quot;sesparse&quot;"/>
+                  <item name="sparse" value="&quot;sparse&quot;"/>
+                  <item name="unknown" value="&quot;unknown&quot;"/>
+                </enum>
+              </arg>
+              <arg type="string" var="$body.properties.storageProfile.disks[].name" options="name">
+                <help short="Gets or sets the name of the virtual disk."/>
+              </arg>
+              <arg type="integer32" var="$body.properties.storageProfile.disks[].unitNumber" options="unit-number">
+                <help short="Gets or sets the unit number of the disk on the controller."/>
+              </arg>
+            </item>
+          </arg>
+        </arg>
+        <arg type="string" var="$body.properties.templateId" options="template-id" group="Properties">
+          <help short="Gets or sets the ARM Id of the template resource to deploy the virtual machine."/>
+        </arg>
+        <arg type="string" var="$body.properties.vCenterId" options="v-center-id" group="Properties">
+          <help short="Gets or sets the ARM Id of the vCenter resource in which this resource pool resides."/>
+        </arg>
+      </argGroup>
+      <operation operationId="VirtualMachines_CreateOrUpdate">
+        <longRunning finalStateVia="azure-async-operation"/>
+        <http path="/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ConnectedVMwarevSphere/virtualMachines/{virtualMachineName}">
+          <request method="put">
+            <path>
+              <param type="string" name="resourceGroupName" arg="$Path.resourceGroupName" required="True"/>
+              <param type="string" name="subscriptionId" arg="$Path.subscriptionId" required="True"/>
+              <param type="string" name="virtualMachineName" arg="$Path.virtualMachineName" required="True"/>
+            </path>
+            <query>
+              <const readOnly="True" const="True" type="string" name="api-version" required="True">
+                <default value="&quot;2022-07-15-preview&quot;"/>
+              </const>
+            </query>
+            <body>
+              <json>
+                <schema type="object" name="body" clientFlatten="True">
+                  <prop type="object" name="extendedLocation" arg="$body.extendedLocation">
+                    <prop type="string" name="name" arg="$body.extendedLocation.name"/>
+                    <prop type="string" name="type" arg="$body.extendedLocation.type"/>
+                  </prop>
+                  <prop type="object" name="identity" arg="$body.identity">
+                    <prop type="string" name="type" arg="$body.identity.type" required="True">
+                      <enum>
+                        <item value="&quot;None&quot;"/>
+                        <item value="&quot;SystemAssigned&quot;"/>
+                      </enum>
+                    </prop>
+                  </prop>
+                  <prop type="string" name="kind" arg="$body.kind"/>
+                  <prop type="ResourceLocation" name="location" arg="$body.location" required="True"/>
+                  <prop type="object" name="properties" required="True" clientFlatten="True">
+                    <prop type="string" name="firmwareType" arg="$body.properties.firmwareType">
+                      <enum>
+                        <item value="&quot;bios&quot;"/>
+                        <item value="&quot;efi&quot;"/>
+                      </enum>
+                    </prop>
+                    <prop type="object" name="guestAgentProfile" arg="$body.properties.guestAgentProfile">
+                      <prop type="string" name="clientPublicKey" arg="$body.properties.guestAgentProfile.clientPublicKey"/>
+                    </prop>
+                    <prop type="object" name="hardwareProfile" arg="$body.properties.hardwareProfile">
+                      <prop type="integer32" name="memorySizeMB" arg="$body.properties.hardwareProfile.memorySizeMB"/>
+                      <prop type="integer32" name="numCPUs" arg="$body.properties.hardwareProfile.numCPUs"/>
+                      <prop type="integer32" name="numCoresPerSocket" arg="$body.properties.hardwareProfile.numCoresPerSocket"/>
+                    </prop>
+                    <prop type="string" name="inventoryItemId" arg="$body.properties.inventoryItemId"/>
+                    <prop type="string" name="moRefId" arg="$body.properties.moRefId"/>
+                    <prop type="object" name="networkProfile" arg="$body.properties.networkProfile">
+                      <prop type="array<object>" name="networkInterfaces" arg="$body.properties.networkProfile.networkInterfaces">
+                        <item type="object">
+                          <prop type="integer32" name="deviceKey" arg="$body.properties.networkProfile.networkInterfaces[].deviceKey"/>
+                          <prop type="object" name="ipSettings" arg="$body.properties.networkProfile.networkInterfaces[].ipSettings">
+                            <prop type="string" name="allocationMethod" arg="$body.properties.networkProfile.networkInterfaces[].ipSettings.allocationMethod">
+                              <enum>
+                                <item value="&quot;dynamic&quot;"/>
+                                <item value="&quot;linklayer&quot;"/>
+                                <item value="&quot;other&quot;"/>
+                                <item value="&quot;random&quot;"/>
+                                <item value="&quot;static&quot;"/>
+                                <item value="&quot;unset&quot;"/>
+                              </enum>
+                            </prop>
+                            <prop type="array<string>" name="dnsServers" arg="$body.properties.networkProfile.networkInterfaces[].ipSettings.dnsServers">
+                              <item type="string"/>
+                            </prop>
+                            <prop type="array<string>" name="gateway" arg="$body.properties.networkProfile.networkInterfaces[].ipSettings.gateway">
+                              <item type="string"/>
+                            </prop>
+                            <prop type="string" name="ipAddress" arg="$body.properties.networkProfile.networkInterfaces[].ipSettings.ipAddress"/>
+                            <prop type="string" name="subnetMask" arg="$body.properties.networkProfile.networkInterfaces[].ipSettings.subnetMask"/>
+                          </prop>
+                          <prop type="string" name="name" arg="$body.properties.networkProfile.networkInterfaces[].name"/>
+                          <prop type="string" name="networkId" arg="$body.properties.networkProfile.networkInterfaces[].networkId"/>
+                          <prop type="string" name="nicType" arg="$body.properties.networkProfile.networkInterfaces[].nicType">
+                            <enum>
+                              <item value="&quot;e1000&quot;"/>
+                              <item value="&quot;e1000e&quot;"/>
+                              <item value="&quot;pcnet32&quot;"/>
+                              <item value="&quot;vmxnet&quot;"/>
+                              <item value="&quot;vmxnet2&quot;"/>
+                              <item value="&quot;vmxnet3&quot;"/>
+                            </enum>
+                          </prop>
+                          <prop type="string" name="powerOnBoot" arg="$body.properties.networkProfile.networkInterfaces[].powerOnBoot">
+                            <enum>
+                              <item value="&quot;disabled&quot;"/>
+                              <item value="&quot;enabled&quot;"/>
+                            </enum>
+                          </prop>
+                        </item>
+                      </prop>
+                    </prop>
+                    <prop type="object" name="osProfile" arg="$body.properties.osProfile">
+                      <prop type="string" name="adminPassword" arg="$body.properties.osProfile.adminPassword"/>
+                      <prop type="string" name="adminUsername" arg="$body.properties.osProfile.adminUsername"/>
+                      <prop type="string" name="computerName" arg="$body.properties.osProfile.computerName"/>
+                      <prop type="string" name="guestId" arg="$body.properties.osProfile.guestId"/>
+                      <prop type="object" name="linuxConfiguration" arg="$body.properties.osProfile.linuxConfiguration">
+                        <prop type="@PatchSettings_create" name="patchSettings" arg="$body.properties.osProfile.linuxConfiguration.patchSettings" clientFlatten="True"/>
+                      </prop>
+                      <prop type="string" name="osType" arg="$body.properties.osProfile.osType">
+                        <enum>
+                          <item value="&quot;Linux&quot;"/>
+                          <item value="&quot;Other&quot;"/>
+                          <item value="&quot;Windows&quot;"/>
+                        </enum>
+                      </prop>
+                      <prop type="object" name="windowsConfiguration" arg="$body.properties.osProfile.windowsConfiguration">
+                        <prop type="object" name="patchSettings" arg="$body.properties.osProfile.windowsConfiguration.patchSettings" cls="PatchSettings_create" clientFlatten="True">
+                          <prop type="string" name="assessmentMode" arg="@PatchSettings_create.assessmentMode"/>
+                          <prop type="string" name="patchMode" arg="@PatchSettings_create.patchMode"/>
+                        </prop>
+                      </prop>
+                    </prop>
+                    <prop type="object" name="placementProfile" arg="$body.properties.placementProfile">
+                      <prop type="string" name="clusterId" arg="$body.properties.placementProfile.clusterId"/>
+                      <prop type="string" name="datastoreId" arg="$body.properties.placementProfile.datastoreId"/>
+                      <prop type="string" name="hostId" arg="$body.properties.placementProfile.hostId"/>
+                      <prop type="string" name="resourcePoolId" arg="$body.properties.placementProfile.resourcePoolId"/>
+                    </prop>
+                    <prop type="string" name="resourcePoolId" arg="$body.properties.resourcePoolId"/>
+                    <prop type="object" name="securityProfile" arg="$body.properties.securityProfile">
+                      <prop type="object" name="uefiSettings" arg="$body.properties.securityProfile.uefiSettings">
+                        <prop type="boolean" name="secureBootEnabled" arg="$body.properties.securityProfile.uefiSettings.secureBootEnabled"/>
+                      </prop>
+                    </prop>
+                    <prop type="string" name="smbiosUuid" arg="$body.properties.smbiosUuid"/>
+                    <prop type="object" name="storageProfile" arg="$body.properties.storageProfile">
+                      <prop type="array<object>" name="disks" arg="$body.properties.storageProfile.disks">
+                        <item type="object">
+                          <prop type="integer32" name="controllerKey" arg="$body.properties.storageProfile.disks[].controllerKey"/>
+                          <prop type="integer32" name="deviceKey" arg="$body.properties.storageProfile.disks[].deviceKey"/>
+                          <prop type="string" name="deviceName" arg="$body.properties.storageProfile.disks[].deviceName"/>
+                          <prop type="string" name="diskMode" arg="$body.properties.storageProfile.disks[].diskMode">
+                            <enum>
+                              <item value="&quot;independent_nonpersistent&quot;"/>
+                              <item value="&quot;independent_persistent&quot;"/>
+                              <item value="&quot;persistent&quot;"/>
+                            </enum>
+                          </prop>
+                          <prop type="integer32" name="diskSizeGB" arg="$body.properties.storageProfile.disks[].diskSizeGB"/>
+                          <prop type="string" name="diskType" arg="$body.properties.storageProfile.disks[].diskType">
+                            <enum>
+                              <item value="&quot;flat&quot;"/>
+                              <item value="&quot;pmem&quot;"/>
+                              <item value="&quot;rawphysical&quot;"/>
+                              <item value="&quot;rawvirtual&quot;"/>
+                              <item value="&quot;sesparse&quot;"/>
+                              <item value="&quot;sparse&quot;"/>
+                              <item value="&quot;unknown&quot;"/>
+                            </enum>
+                          </prop>
+                          <prop type="string" name="name" arg="$body.properties.storageProfile.disks[].name"/>
+                          <prop type="integer32" name="unitNumber" arg="$body.properties.storageProfile.disks[].unitNumber"/>
+                        </item>
+                      </prop>
+                    </prop>
+                    <prop type="string" name="templateId" arg="$body.properties.templateId"/>
+                    <prop type="string" name="vCenterId" arg="$body.properties.vCenterId"/>
+                  </prop>
+                  <prop type="object" name="tags" arg="$body.tags">
+                    <additionalProp>
+                      <item type="string"/>
+                    </additionalProp>
+                  </prop>
+                </schema>
+              </json>
+            </body>
+          </request>
+          <response statusCode="200 201">
+            <body>
+              <json var="$Instance">
+                <schema type="object">
+                  <prop type="object" name="extendedLocation">
+                    <prop type="string" name="name"/>
+                    <prop type="string" name="type"/>
+                  </prop>
+                  <prop readOnly="True" type="ResourceId" name="id">
+                    <format template="/subscriptions/{}/resourceGroups/{}/providers/Microsoft.ConnectedVMwarevSphere/virtualMachines/{}"/>
+                  </prop>
+                  <prop type="object" name="identity">
+                    <prop readOnly="True" type="string" name="principalId"/>
+                    <prop readOnly="True" type="string" name="tenantId"/>
+                    <prop type="string" name="type" required="True">
+                      <enum>
+                        <item value="&quot;None&quot;"/>
+                        <item value="&quot;SystemAssigned&quot;"/>
+                      </enum>
+                    </prop>
+                  </prop>
+                  <prop type="string" name="kind"/>
+                  <prop type="ResourceLocation" name="location" required="True"/>
+                  <prop readOnly="True" type="string" name="name"/>
+                  <prop type="object" name="properties" required="True" clientFlatten="True">
+                    <prop readOnly="True" type="string" name="customResourceName"/>
+                    <prop type="string" name="firmwareType">
+                      <enum>
+                        <item value="&quot;bios&quot;"/>
+                        <item value="&quot;efi&quot;"/>
+                      </enum>
+                    </prop>
+                    <prop readOnly="True" type="string" name="folderPath"/>
+                    <prop type="object" name="guestAgentProfile">
+                      <prop readOnly="True" type="string" name="agentVersion"/>
+                      <prop type="string" name="clientPublicKey"/>
+                      <prop readOnly="True" type="array<object>" name="errorDetails">
+                        <item type="object" cls="ErrorDetail_read">
+                          <prop readOnly="True" type="array<object>" name="additionalInfo">
+                            <item type="object">
+                              <prop readOnly="True" type="string" name="type"/>
+                            </item>
+                          </prop>
+                          <prop readOnly="True" type="string" name="code"/>
+                          <prop readOnly="True" type="array<@ErrorDetail_read>" name="details" identifiers="message target">
+                            <item type="@ErrorDetail_read"/>
+                          </prop>
+                          <prop readOnly="True" type="string" name="message"/>
+                          <prop readOnly="True" type="string" name="target"/>
+                        </item>
+                      </prop>
+                      <prop readOnly="True" type="dateTime" name="lastStatusChange"/>
+                      <prop readOnly="True" type="string" name="mssqlDiscovered"/>
+                      <prop readOnly="True" type="string" name="status">
+                        <enum>
+                          <item value="&quot;Connected&quot;"/>
+                          <item value="&quot;Disconnected&quot;"/>
+                          <item value="&quot;Error&quot;"/>
+                        </enum>
+                      </prop>
+                      <prop readOnly="True" type="string" name="vmUuid"/>
+                    </prop>
+                    <prop type="object" name="hardwareProfile">
+                      <prop readOnly="True" type="boolean" name="cpuHotAddEnabled"/>
+                      <prop readOnly="True" type="boolean" name="cpuHotRemoveEnabled"/>
+                      <prop readOnly="True" type="boolean" name="memoryHotAddEnabled"/>
+                      <prop type="integer32" name="memorySizeMB"/>
+                      <prop type="integer32" name="numCPUs"/>
+                      <prop type="integer32" name="numCoresPerSocket"/>
+                    </prop>
+                    <prop readOnly="True" type="string" name="instanceUuid"/>
+                    <prop type="string" name="inventoryItemId"/>
+                    <prop readOnly="True" type="string" name="moName"/>
+                    <prop type="string" name="moRefId"/>
+                    <prop type="object" name="networkProfile">
+                      <prop type="array<object>" name="networkInterfaces">
+                        <item type="object">
+                          <prop type="integer32" name="deviceKey"/>
+                          <prop readOnly="True" type="array<string>" name="ipAddresses">
+                            <item type="string"/>
+                          </prop>
+                          <prop type="object" name="ipSettings">
+                            <prop type="string" name="allocationMethod">
+                              <enum>
+                                <item value="&quot;dynamic&quot;"/>
+                                <item value="&quot;linklayer&quot;"/>
+                                <item value="&quot;other&quot;"/>
+                                <item value="&quot;random&quot;"/>
+                                <item value="&quot;static&quot;"/>
+                                <item value="&quot;unset&quot;"/>
+                              </enum>
+                            </prop>
+                            <prop type="array<string>" name="dnsServers">
+                              <item type="string"/>
+                            </prop>
+                            <prop type="array<string>" name="gateway">
+                              <item type="string"/>
+                            </prop>
+                            <prop type="string" name="ipAddress"/>
+                            <prop readOnly="True" type="array<object>" name="ipAddressInfo">
+                              <item type="object">
+                                <prop readOnly="True" type="string" name="allocationMethod"/>
+                                <prop readOnly="True" type="string" name="ipAddress"/>
+                                <prop readOnly="True" type="string" name="subnetMask"/>
+                              </item>
+                            </prop>
+                            <prop readOnly="True" type="string" name="primaryWinsServer"/>
+                            <prop readOnly="True" type="string" name="secondaryWinsServer"/>
+                            <prop type="string" name="subnetMask"/>
+                          </prop>
+                          <prop readOnly="True" type="string" name="label"/>
+                          <prop readOnly="True" type="string" name="macAddress"/>
+                          <prop type="string" name="name"/>
+                          <prop type="string" name="networkId"/>
+                          <prop readOnly="True" type="string" name="networkMoName"/>
+                          <prop readOnly="True" type="string" name="networkMoRefId"/>
+                          <prop type="string" name="nicType">
+                            <enum>
+                              <item value="&quot;e1000&quot;"/>
+                              <item value="&quot;e1000e&quot;"/>
+                              <item value="&quot;pcnet32&quot;"/>
+                              <item value="&quot;vmxnet&quot;"/>
+                              <item value="&quot;vmxnet2&quot;"/>
+                              <item value="&quot;vmxnet3&quot;"/>
+                            </enum>
+                          </prop>
+                          <prop type="string" name="powerOnBoot">
+                            <enum>
+                              <item value="&quot;disabled&quot;"/>
+                              <item value="&quot;enabled&quot;"/>
+                            </enum>
+                          </prop>
+                        </item>
+                      </prop>
+                    </prop>
+                    <prop type="object" name="osProfile">
+                      <prop type="string" name="adminUsername"/>
+                      <prop readOnly="True" type="boolean" name="allowExtensionOperations"/>
+                      <prop type="string" name="computerName"/>
+                      <prop type="string" name="guestId"/>
+                      <prop type="object" name="linuxConfiguration">
+                        <prop type="@PatchSettings_read" name="patchSettings" clientFlatten="True"/>
+                      </prop>
+                      <prop readOnly="True" type="string" name="osName"/>
+                      <prop type="string" name="osType">
+                        <enum>
+                          <item value="&quot;Linux&quot;"/>
+                          <item value="&quot;Other&quot;"/>
+                          <item value="&quot;Windows&quot;"/>
+                        </enum>
+                      </prop>
+                      <prop readOnly="True" type="string" name="toolsRunningStatus"/>
+                      <prop readOnly="True" type="string" name="toolsVersion"/>
+                      <prop readOnly="True" type="string" name="toolsVersionStatus"/>
+                      <prop type="object" name="windowsConfiguration">
+                        <prop type="object" name="patchSettings" cls="PatchSettings_read" clientFlatten="True">
+                          <prop type="string" name="assessmentMode"/>
+                          <prop type="string" name="patchMode"/>
+                        </prop>
+                      </prop>
+                    </prop>
+                    <prop type="object" name="placementProfile">
+                      <prop type="string" name="clusterId"/>
+                      <prop type="string" name="datastoreId"/>
+                      <prop type="string" name="hostId"/>
+                      <prop type="string" name="resourcePoolId"/>
+                    </prop>
+                    <prop readOnly="True" type="string" name="powerState"/>
+                    <prop readOnly="True" type="string" name="provisioningState"/>
+                    <prop type="string" name="resourcePoolId"/>
+                    <prop type="object" name="securityProfile">
+                      <prop type="object" name="uefiSettings">
+                        <prop type="boolean" name="secureBootEnabled"/>
+                      </prop>
+                    </prop>
+                    <prop type="string" name="smbiosUuid"/>
+                    <prop readOnly="True" type="array<object>" name="statuses">
+                      <item type="object">
+                        <prop readOnly="True" type="dateTime" name="lastUpdatedAt"/>
+                        <prop readOnly="True" type="string" name="message"/>
+                        <prop readOnly="True" type="string" name="reason"/>
+                        <prop readOnly="True" type="string" name="severity"/>
+                        <prop readOnly="True" type="string" name="status"/>
+                        <prop readOnly="True" type="string" name="type"/>
+                      </item>
+                    </prop>
+                    <prop type="object" name="storageProfile">
+                      <prop type="array<object>" name="disks">
+                        <item type="object">
+                          <prop type="integer32" name="controllerKey"/>
+                          <prop type="integer32" name="deviceKey"/>
+                          <prop type="string" name="deviceName"/>
+                          <prop type="string" name="diskMode">
+                            <enum>
+                              <item value="&quot;independent_nonpersistent&quot;"/>
+                              <item value="&quot;independent_persistent&quot;"/>
+                              <item value="&quot;persistent&quot;"/>
+                            </enum>
+                          </prop>
+                          <prop readOnly="True" type="string" name="diskObjectId"/>
+                          <prop type="integer32" name="diskSizeGB"/>
+                          <prop type="string" name="diskType">
+                            <enum>
+                              <item value="&quot;flat&quot;"/>
+                              <item value="&quot;pmem&quot;"/>
+                              <item value="&quot;rawphysical&quot;"/>
+                              <item value="&quot;rawvirtual&quot;"/>
+                              <item value="&quot;sesparse&quot;"/>
+                              <item value="&quot;sparse&quot;"/>
+                              <item value="&quot;unknown&quot;"/>
+                            </enum>
+                          </prop>
+                          <prop readOnly="True" type="string" name="label"/>
+                          <prop type="string" name="name"/>
+                          <prop type="integer32" name="unitNumber"/>
+                        </item>
+                      </prop>
+                      <prop readOnly="True" type="array<object>" name="scsiControllers">
+                        <item type="object">
+                          <prop type="integer32" name="busNumber"/>
+                          <prop type="integer32" name="controllerKey"/>
+                          <prop type="integer32" name="scsiCtlrUnitNumber"/>
+                          <prop type="string" name="sharing">
+                            <enum>
+                              <item value="&quot;noSharing&quot;"/>
+                              <item value="&quot;physicalSharing&quot;"/>
+                              <item value="&quot;virtualSharing&quot;"/>
+                            </enum>
+                          </prop>
+                          <prop type="string" name="type">
+                            <enum>
+                              <item value="&quot;buslogic&quot;"/>
+                              <item value="&quot;lsilogic&quot;"/>
+                              <item value="&quot;lsilogicsas&quot;"/>
+                              <item value="&quot;pvscsi&quot;"/>
+                            </enum>
+                          </prop>
+                        </item>
+                      </prop>
+                    </prop>
+                    <prop type="string" name="templateId"/>
+                    <prop readOnly="True" type="string" name="uuid"/>
+                    <prop type="string" name="vCenterId"/>
+                    <prop readOnly="True" type="string" name="vmId"/>
+                  </prop>
+                  <prop readOnly="True" type="object" name="systemData">
+                    <prop type="dateTime" name="createdAt"/>
+                    <prop type="string" name="createdBy"/>
+                    <prop type="string" name="createdByType">
+                      <enum>
+                        <item value="&quot;Application&quot;"/>
+                        <item value="&quot;Key&quot;"/>
+                        <item value="&quot;ManagedIdentity&quot;"/>
+                        <item value="&quot;User&quot;"/>
+                      </enum>
+                    </prop>
+                    <prop type="dateTime" name="lastModifiedAt"/>
+                    <prop type="string" name="lastModifiedBy"/>
+                    <prop type="string" name="lastModifiedByType">
+                      <enum>
+                        <item value="&quot;Application&quot;"/>
+                        <item value="&quot;Key&quot;"/>
+                        <item value="&quot;ManagedIdentity&quot;"/>
+                        <item value="&quot;User&quot;"/>
+                      </enum>
+                    </prop>
+                  </prop>
+                  <prop type="object" name="tags">
+                    <additionalProp>
+                      <item type="string"/>
+                    </additionalProp>
+                  </prop>
+                  <prop readOnly="True" type="string" name="type"/>
+                </schema>
+              </json>
+            </body>
+          </response>
+          <response isError="True">
+            <body>
+              <json>
+                <schema type="@MgmtErrorFormat"/>
+              </json>
+            </body>
+          </response>
+        </http>
+      </operation>
+      <output type="object" ref="$Instance" clientFlatten="True"/>
+    </command>
+    <command name="update" version="2022-07-15-preview">
+      <resource id="/subscriptions/{}/resourcegroups/{}/providers/microsoft.connectedvmwarevsphere/virtualmachines/{}" version="2022-07-15-preview" swagger="mgmt-plane/connectedvmware/ResourceProviders/Microsoft.ConnectedVMwarevSphere/Paths/L3N1YnNjcmlwdGlvbnMve3N1YnNjcmlwdGlvbklkfS9yZXNvdXJjZUdyb3Vwcy97cmVzb3VyY2VHcm91cE5hbWV9L3Byb3ZpZGVycy9NaWNyb3NvZnQuQ29ubmVjdGVkVk13YXJldlNwaGVyZS92aXJ0dWFsTWFjaGluZXMve3ZpcnR1YWxNYWNoaW5lTmFtZX0=/V/MjAyMi0wNy0xNS1wcmV2aWV3"/>
+      <argGroup name="">
+        <arg type="ResourceGroupName" var="$Path.resourceGroupName" options="resource-group g" required="True" idPart="resource_group"/>
+        <arg type="SubscriptionId" var="$Path.subscriptionId" options="subscription" required="True" idPart="subscription"/>
+        <arg type="string" var="$Path.virtualMachineName" options="virtual-machine-name name n" required="True" idPart="name">
+          <help short="Name of the virtual machine resource."/>
+        </arg>
+      </argGroup>
+      <argGroup name="Body">
+        <arg nullable="True" type="object" var="$body.extendedLocation" options="extended-location" group="Body">
+          <help short="Gets or sets the extended location."/>
+          <arg nullable="True" type="string" var="$body.extendedLocation.name" options="name">
+            <help short="The extended location name."/>
+          </arg>
+          <arg nullable="True" type="string" var="$body.extendedLocation.type" options="type">
+            <help short="The extended location type."/>
+          </arg>
+        </arg>
+        <arg nullable="True" type="object" var="$body.identity" options="identity" group="Body">
+          <help short="The identity of the resource."/>
+          <arg type="string" var="$body.identity.type" options="type">
+            <help short="The type of managed service identity."/>
+            <enum>
+              <item name="None" value="&quot;None&quot;"/>
+              <item name="SystemAssigned" value="&quot;SystemAssigned&quot;"/>
+            </enum>
+          </arg>
+        </arg>
+        <arg nullable="True" type="string" var="$body.kind" options="kind" group="Body">
+          <help short="Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value."/>
+        </arg>
+        <arg nullable="True" type="object" var="$body.tags" options="tags" group="Body">
+          <help short="Gets or sets the Resource tags."/>
+          <additionalProp>
+            <item nullable="True" type="string"/>
+          </additionalProp>
+        </arg>
+      </argGroup>
+      <argGroup name="Properties">
+        <arg nullable="True" type="string" var="$body.properties.firmwareType" options="firmware-type" group="Properties">
+          <help short="Firmware type"/>
+          <enum>
+            <item name="bios" value="&quot;bios&quot;"/>
+            <item name="efi" value="&quot;efi&quot;"/>
+          </enum>
+        </arg>
+        <arg nullable="True" type="object" var="$body.properties.guestAgentProfile" options="guest-agent-profile" group="Properties">
+          <help short="Guest agent status properties."/>
+          <arg nullable="True" type="string" var="$body.properties.guestAgentProfile.clientPublicKey" options="client-public-key">
+            <help short="Gets or sets the Public Key provided by the client for enabling guest management."/>
+          </arg>
+        </arg>
+        <arg nullable="True" type="object" var="$body.properties.hardwareProfile" options="hardware-profile" group="Properties">
+          <help short="Hardware properties."/>
+          <arg nullable="True" type="integer32" var="$body.properties.hardwareProfile.memorySizeMB" options="memory-size-mb">
+            <help short="Gets or sets memory size in MBs for the vm."/>
+          </arg>
+          <arg nullable="True" type="integer32" var="$body.properties.hardwareProfile.numCPUs" options="num-cp-us">
+            <help short="Gets or sets the number of vCPUs for the vm."/>
+          </arg>
+          <arg nullable="True" type="integer32" var="$body.properties.hardwareProfile.numCoresPerSocket" options="num-cores-per-socket">
+            <help short="Gets or sets the number of cores per socket for the vm. Defaults to 1 if unspecified."/>
+          </arg>
+        </arg>
+        <arg nullable="True" type="string" var="$body.properties.inventoryItemId" options="inventory-item-id" group="Properties">
+          <help short="Gets or sets the inventory Item ID for the virtual machine."/>
+        </arg>
+        <arg nullable="True" type="string" var="$body.properties.moRefId" options="mo-ref-id" group="Properties">
+          <help short="Gets or sets the vCenter MoRef (Managed Object Reference) ID for the virtual machine."/>
+        </arg>
+        <arg nullable="True" type="object" var="$body.properties.networkProfile" options="network-profile" group="Properties">
+          <help short="Network properties."/>
+          <arg nullable="True" type="array<object>" var="$body.properties.networkProfile.networkInterfaces" options="network-interfaces">
+            <help short="Gets or sets the list of network interfaces associated with the virtual machine."/>
+            <item nullable="True" type="object">
+              <arg nullable="True" type="integer32" var="$body.properties.networkProfile.networkInterfaces[].deviceKey" options="device-key">
+                <help short="Gets or sets the device key value."/>
+              </arg>
+              <arg nullable="True" type="object" var="$body.properties.networkProfile.networkInterfaces[].ipSettings" options="ip-settings">
+                <help short="Gets or sets the ipsettings."/>
+                <arg nullable="True" type="string" var="$body.properties.networkProfile.networkInterfaces[].ipSettings.allocationMethod" options="allocation-method">
+                  <help short="Gets or sets the nic allocation method."/>
+                  <enum>
+                    <item name="dynamic" value="&quot;dynamic&quot;"/>
+                    <item name="linklayer" value="&quot;linklayer&quot;"/>
+                    <item name="other" value="&quot;other&quot;"/>
+                    <item name="random" value="&quot;random&quot;"/>
+                    <item name="static" value="&quot;static&quot;"/>
+                    <item name="unset" value="&quot;unset&quot;"/>
+                  </enum>
+                </arg>
+                <arg nullable="True" type="array<string>" var="$body.properties.networkProfile.networkInterfaces[].ipSettings.dnsServers" options="dns-servers">
+                  <help short="Gets or sets the dns servers."/>
+                  <item nullable="True" type="string"/>
+                </arg>
+                <arg nullable="True" type="array<string>" var="$body.properties.networkProfile.networkInterfaces[].ipSettings.gateway" options="gateway">
+                  <help short="Gets or sets the gateway."/>
+                  <item nullable="True" type="string"/>
+                </arg>
+                <arg nullable="True" type="string" var="$body.properties.networkProfile.networkInterfaces[].ipSettings.ipAddress" options="ip-address">
+                  <help short="Gets or sets the ip address for the nic."/>
+                </arg>
+                <arg nullable="True" type="string" var="$body.properties.networkProfile.networkInterfaces[].ipSettings.subnetMask" options="subnet-mask">
+                  <help short="Gets or sets the mask."/>
+                </arg>
+              </arg>
+              <arg nullable="True" type="string" var="$body.properties.networkProfile.networkInterfaces[].name" options="name">
+                <help short="Gets or sets the name of the network interface."/>
+              </arg>
+              <arg nullable="True" type="string" var="$body.properties.networkProfile.networkInterfaces[].networkId" options="network-id">
+                <help short="Gets or sets the ARM Id of the network resource to connect the virtual machine."/>
+              </arg>
+              <arg nullable="True" type="string" var="$body.properties.networkProfile.networkInterfaces[].nicType" options="nic-type">
+                <help short="NIC type"/>
+                <enum>
+                  <item name="e1000" value="&quot;e1000&quot;"/>
+                  <item name="e1000e" value="&quot;e1000e&quot;"/>
+                  <item name="pcnet32" value="&quot;pcnet32&quot;"/>
+                  <item name="vmxnet" value="&quot;vmxnet&quot;"/>
+                  <item name="vmxnet2" value="&quot;vmxnet2&quot;"/>
+                  <item name="vmxnet3" value="&quot;vmxnet3&quot;"/>
+                </enum>
+              </arg>
+              <arg nullable="True" type="string" var="$body.properties.networkProfile.networkInterfaces[].powerOnBoot" options="power-on-boot">
+                <help short="Gets or sets the power on boot."/>
+                <enum>
+                  <item name="disabled" value="&quot;disabled&quot;"/>
+                  <item name="enabled" value="&quot;enabled&quot;"/>
+                </enum>
+              </arg>
+            </item>
+          </arg>
+        </arg>
+        <arg nullable="True" type="object" var="$body.properties.osProfile" options="os-profile" group="Properties">
+          <help short="OS properties."/>
+          <arg nullable="True" type="string" var="$body.properties.osProfile.adminPassword" options="admin-password">
+            <help short="Gets or sets administrator password."/>
+          </arg>
+          <arg nullable="True" type="string" var="$body.properties.osProfile.adminUsername" options="admin-username">
+            <help short="Gets or sets administrator username."/>
+          </arg>
+          <arg nullable="True" type="string" var="$body.properties.osProfile.computerName" options="computer-name">
+            <help short="Gets or sets computer name."/>
+          </arg>
+          <arg nullable="True" type="string" var="$body.properties.osProfile.guestId" options="guest-id">
+            <help short="Gets or sets the guestId."/>
+          </arg>
+          <arg nullable="True" type="object" var="$body.properties.osProfile.linuxConfiguration" options="linux-configuration">
+            <help short="Specifies the linux configuration for update management."/>
+            <arg nullable="True" type="@PatchSettings_update" var="$body.properties.osProfile.linuxConfiguration.patchSettings" options="patch-settings"/>
+          </arg>
+          <arg nullable="True" type="string" var="$body.properties.osProfile.osType" options="os-type">
+            <help short="Gets or sets the type of the os."/>
+            <enum>
+              <item name="Linux" value="&quot;Linux&quot;"/>
+              <item name="Other" value="&quot;Other&quot;"/>
+              <item name="Windows" value="&quot;Windows&quot;"/>
+            </enum>
+          </arg>
+          <arg nullable="True" type="object" var="$body.properties.osProfile.windowsConfiguration" options="windows-configuration">
+            <help short="Specifies the windows configuration for update management."/>
+            <arg nullable="True" type="object" var="$body.properties.osProfile.windowsConfiguration.patchSettings" options="patch-settings" cls="PatchSettings_update">
+              <help short="Specifies the patch settings."/>
+              <arg nullable="True" type="string" var="@PatchSettings_update.assessmentMode" options="assessment-mode">
+                <help short="Specifies the assessment mode."/>
+              </arg>
+              <arg nullable="True" type="string" var="@PatchSettings_update.patchMode" options="patch-mode">
+                <help short="Specifies the patch mode."/>
+              </arg>
+            </arg>
+          </arg>
+        </arg>
+        <arg nullable="True" type="object" var="$body.properties.placementProfile" options="placement-profile" group="Properties">
+          <help short="Placement properties."/>
+          <arg nullable="True" type="string" var="$body.properties.placementProfile.clusterId" options="cluster-id">
+            <help short="Gets or sets the ARM Id of the cluster resource on which this virtual machine will deploy."/>
+          </arg>
+          <arg nullable="True" type="string" var="$body.properties.placementProfile.datastoreId" options="datastore-id">
+            <help short="Gets or sets the ARM Id of the datastore resource on which the data for the virtual machine will be kept."/>
+          </arg>
+          <arg nullable="True" type="string" var="$body.properties.placementProfile.hostId" options="host-id">
+            <help short="Gets or sets the ARM Id of the host resource on which this virtual machine will deploy."/>
+          </arg>
+          <arg nullable="True" type="string" var="$body.properties.placementProfile.resourcePoolId" options="resource-pool-id">
+            <help short="Gets or sets the ARM Id of the resourcePool resource on which this virtual machine will deploy."/>
+          </arg>
+        </arg>
+        <arg nullable="True" type="string" var="$body.properties.resourcePoolId" options="resource-pool-id" group="Properties">
+          <help short="Gets or sets the ARM Id of the resourcePool resource on which this virtual machine will&#13; deploy."/>
+        </arg>
+        <arg nullable="True" type="object" var="$body.properties.securityProfile" options="security-profile" group="Properties">
+          <help short="Gets the security profile."/>
+          <arg nullable="True" type="object" var="$body.properties.securityProfile.uefiSettings" options="uefi-settings">
+            <help short="Specifies the security settings like secure boot used while creating the virtual machine."/>
+            <arg nullable="True" type="boolean" var="$body.properties.securityProfile.uefiSettings.secureBootEnabled" options="secure-boot-enabled">
+              <help short="Specifies whether secure boot should be enabled on the virtual machine."/>
+            </arg>
+          </arg>
+        </arg>
+        <arg nullable="True" type="string" var="$body.properties.smbiosUuid" options="smbios-uuid" group="Properties">
+          <help short="Gets or sets the SMBIOS UUID of the vm."/>
+        </arg>
+        <arg nullable="True" type="object" var="$body.properties.storageProfile" options="storage-profile" group="Properties">
+          <help short="Storage properties."/>
+          <arg nullable="True" type="array<object>" var="$body.properties.storageProfile.disks" options="disks">
+            <help short="Gets or sets the list of virtual disks associated with the virtual machine."/>
+            <item nullable="True" type="object">
+              <arg nullable="True" type="integer32" var="$body.properties.storageProfile.disks[].controllerKey" options="controller-key">
+                <help short="Gets or sets the controller id."/>
+              </arg>
+              <arg nullable="True" type="integer32" var="$body.properties.storageProfile.disks[].deviceKey" options="device-key">
+                <help short="Gets or sets the device key value."/>
+              </arg>
+              <arg nullable="True" type="string" var="$body.properties.storageProfile.disks[].deviceName" options="device-name">
+                <help short="Gets or sets the device name."/>
+              </arg>
+              <arg nullable="True" type="string" var="$body.properties.storageProfile.disks[].diskMode" options="disk-mode">
+                <help short="Gets or sets the disk mode."/>
+                <enum>
+                  <item name="independent_nonpersistent" value="&quot;independent_nonpersistent&quot;"/>
+                  <item name="independent_persistent" value="&quot;independent_persistent&quot;"/>
+                  <item name="persistent" value="&quot;persistent&quot;"/>
+                </enum>
+              </arg>
+              <arg nullable="True" type="integer32" var="$body.properties.storageProfile.disks[].diskSizeGB" options="disk-size-gb">
+                <help short="Gets or sets the disk total size."/>
+              </arg>
+              <arg nullable="True" type="string" var="$body.properties.storageProfile.disks[].diskType" options="disk-type">
+                <help short="Gets or sets the disk backing type."/>
+                <enum>
+                  <item name="flat" value="&quot;flat&quot;"/>
+                  <item name="pmem" value="&quot;pmem&quot;"/>
+                  <item name="rawphysical" value="&quot;rawphysical&quot;"/>
+                  <item name="rawvirtual" value="&quot;rawvirtual&quot;"/>
+                  <item name="sesparse" value="&quot;sesparse&quot;"/>
+                  <item name="sparse" value="&quot;sparse&quot;"/>
+                  <item name="unknown" value="&quot;unknown&quot;"/>
+                </enum>
+              </arg>
+              <arg nullable="True" type="string" var="$body.properties.storageProfile.disks[].name" options="name">
+                <help short="Gets or sets the name of the virtual disk."/>
+              </arg>
+              <arg nullable="True" type="integer32" var="$body.properties.storageProfile.disks[].unitNumber" options="unit-number">
+                <help short="Gets or sets the unit number of the disk on the controller."/>
+              </arg>
+            </item>
+          </arg>
+        </arg>
+        <arg nullable="True" type="string" var="$body.properties.templateId" options="template-id" group="Properties">
+          <help short="Gets or sets the ARM Id of the template resource to deploy the virtual machine."/>
+        </arg>
+        <arg nullable="True" type="string" var="$body.properties.vCenterId" options="v-center-id" group="Properties">
+          <help short="Gets or sets the ARM Id of the vCenter resource in which this resource pool resides."/>
+        </arg>
+      </argGroup>
+      <operation operationId="VirtualMachines_Get">
+        <http path="/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ConnectedVMwarevSphere/virtualMachines/{virtualMachineName}">
+          <request method="get">
+            <path>
+              <param type="string" name="resourceGroupName" arg="$Path.resourceGroupName" required="True"/>
+              <param type="string" name="subscriptionId" arg="$Path.subscriptionId" required="True"/>
+              <param type="string" name="virtualMachineName" arg="$Path.virtualMachineName" required="True"/>
+            </path>
+            <query>
+              <const readOnly="True" const="True" type="string" name="api-version" required="True">
+                <default value="&quot;2022-07-15-preview&quot;"/>
+              </const>
+            </query>
+          </request>
+          <response statusCode="200">
+            <body>
+              <json var="$Instance">
+                <schema type="object" cls="VirtualMachine_read">
+                  <prop type="object" name="extendedLocation">
+                    <prop type="string" name="name"/>
+                    <prop type="string" name="type"/>
+                  </prop>
+                  <prop readOnly="True" type="ResourceId" name="id">
+                    <format template="/subscriptions/{}/resourceGroups/{}/providers/Microsoft.ConnectedVMwarevSphere/virtualMachines/{}"/>
+                  </prop>
+                  <prop type="object" name="identity">
+                    <prop readOnly="True" type="string" name="principalId"/>
+                    <prop readOnly="True" type="string" name="tenantId"/>
+                    <prop type="string" name="type" required="True">
+                      <enum>
+                        <item value="&quot;None&quot;"/>
+                        <item value="&quot;SystemAssigned&quot;"/>
+                      </enum>
+                    </prop>
+                  </prop>
+                  <prop type="string" name="kind"/>
+                  <prop type="ResourceLocation" name="location" required="True"/>
+                  <prop readOnly="True" type="string" name="name"/>
+                  <prop type="object" name="properties" required="True" clientFlatten="True">
+                    <prop readOnly="True" type="string" name="customResourceName"/>
+                    <prop type="string" name="firmwareType">
+                      <enum>
+                        <item value="&quot;bios&quot;"/>
+                        <item value="&quot;efi&quot;"/>
+                      </enum>
+                    </prop>
+                    <prop readOnly="True" type="string" name="folderPath"/>
+                    <prop type="object" name="guestAgentProfile">
+                      <prop readOnly="True" type="string" name="agentVersion"/>
+                      <prop type="string" name="clientPublicKey"/>
+                      <prop readOnly="True" type="array<object>" name="errorDetails">
+                        <item type="object" cls="ErrorDetail_read">
+                          <prop readOnly="True" type="array<object>" name="additionalInfo">
+                            <item type="object">
+                              <prop readOnly="True" type="string" name="type"/>
+                            </item>
+                          </prop>
+                          <prop readOnly="True" type="string" name="code"/>
+                          <prop readOnly="True" type="array<@ErrorDetail_read>" name="details" identifiers="message target">
+                            <item type="@ErrorDetail_read"/>
+                          </prop>
+                          <prop readOnly="True" type="string" name="message"/>
+                          <prop readOnly="True" type="string" name="target"/>
+                        </item>
+                      </prop>
+                      <prop readOnly="True" type="dateTime" name="lastStatusChange"/>
+                      <prop readOnly="True" type="string" name="mssqlDiscovered"/>
+                      <prop readOnly="True" type="string" name="status">
+                        <enum>
+                          <item value="&quot;Connected&quot;"/>
+                          <item value="&quot;Disconnected&quot;"/>
+                          <item value="&quot;Error&quot;"/>
+                        </enum>
+                      </prop>
+                      <prop readOnly="True" type="string" name="vmUuid"/>
+                    </prop>
+                    <prop type="object" name="hardwareProfile">
+                      <prop readOnly="True" type="boolean" name="cpuHotAddEnabled"/>
+                      <prop readOnly="True" type="boolean" name="cpuHotRemoveEnabled"/>
+                      <prop readOnly="True" type="boolean" name="memoryHotAddEnabled"/>
+                      <prop type="integer32" name="memorySizeMB"/>
+                      <prop type="integer32" name="numCPUs"/>
+                      <prop type="integer32" name="numCoresPerSocket"/>
+                    </prop>
+                    <prop readOnly="True" type="string" name="instanceUuid"/>
+                    <prop type="string" name="inventoryItemId"/>
+                    <prop readOnly="True" type="string" name="moName"/>
+                    <prop type="string" name="moRefId"/>
+                    <prop type="object" name="networkProfile">
+                      <prop type="array<object>" name="networkInterfaces">
+                        <item type="object">
+                          <prop type="integer32" name="deviceKey"/>
+                          <prop readOnly="True" type="array<string>" name="ipAddresses">
+                            <item type="string"/>
+                          </prop>
+                          <prop type="object" name="ipSettings">
+                            <prop type="string" name="allocationMethod">
+                              <enum>
+                                <item value="&quot;dynamic&quot;"/>
+                                <item value="&quot;linklayer&quot;"/>
+                                <item value="&quot;other&quot;"/>
+                                <item value="&quot;random&quot;"/>
+                                <item value="&quot;static&quot;"/>
+                                <item value="&quot;unset&quot;"/>
+                              </enum>
+                            </prop>
+                            <prop type="array<string>" name="dnsServers">
+                              <item type="string"/>
+                            </prop>
+                            <prop type="array<string>" name="gateway">
+                              <item type="string"/>
+                            </prop>
+                            <prop type="string" name="ipAddress"/>
+                            <prop readOnly="True" type="array<object>" name="ipAddressInfo">
+                              <item type="object">
+                                <prop readOnly="True" type="string" name="allocationMethod"/>
+                                <prop readOnly="True" type="string" name="ipAddress"/>
+                                <prop readOnly="True" type="string" name="subnetMask"/>
+                              </item>
+                            </prop>
+                            <prop readOnly="True" type="string" name="primaryWinsServer"/>
+                            <prop readOnly="True" type="string" name="secondaryWinsServer"/>
+                            <prop type="string" name="subnetMask"/>
+                          </prop>
+                          <prop readOnly="True" type="string" name="label"/>
+                          <prop readOnly="True" type="string" name="macAddress"/>
+                          <prop type="string" name="name"/>
+                          <prop type="string" name="networkId"/>
+                          <prop readOnly="True" type="string" name="networkMoName"/>
+                          <prop readOnly="True" type="string" name="networkMoRefId"/>
+                          <prop type="string" name="nicType">
+                            <enum>
+                              <item value="&quot;e1000&quot;"/>
+                              <item value="&quot;e1000e&quot;"/>
+                              <item value="&quot;pcnet32&quot;"/>
+                              <item value="&quot;vmxnet&quot;"/>
+                              <item value="&quot;vmxnet2&quot;"/>
+                              <item value="&quot;vmxnet3&quot;"/>
+                            </enum>
+                          </prop>
+                          <prop type="string" name="powerOnBoot">
+                            <enum>
+                              <item value="&quot;disabled&quot;"/>
+                              <item value="&quot;enabled&quot;"/>
+                            </enum>
+                          </prop>
+                        </item>
+                      </prop>
+                    </prop>
+                    <prop type="object" name="osProfile">
+                      <prop type="string" name="adminUsername"/>
+                      <prop readOnly="True" type="boolean" name="allowExtensionOperations"/>
+                      <prop type="string" name="computerName"/>
+                      <prop type="string" name="guestId"/>
+                      <prop type="object" name="linuxConfiguration">
+                        <prop type="@PatchSettings_read" name="patchSettings" clientFlatten="True"/>
+                      </prop>
+                      <prop readOnly="True" type="string" name="osName"/>
+                      <prop type="string" name="osType">
+                        <enum>
+                          <item value="&quot;Linux&quot;"/>
+                          <item value="&quot;Other&quot;"/>
+                          <item value="&quot;Windows&quot;"/>
+                        </enum>
+                      </prop>
+                      <prop readOnly="True" type="string" name="toolsRunningStatus"/>
+                      <prop readOnly="True" type="string" name="toolsVersion"/>
+                      <prop readOnly="True" type="string" name="toolsVersionStatus"/>
+                      <prop type="object" name="windowsConfiguration">
+                        <prop type="object" name="patchSettings" cls="PatchSettings_read" clientFlatten="True">
+                          <prop type="string" name="assessmentMode"/>
+                          <prop type="string" name="patchMode"/>
+                        </prop>
+                      </prop>
+                    </prop>
+                    <prop type="object" name="placementProfile">
+                      <prop type="string" name="clusterId"/>
+                      <prop type="string" name="datastoreId"/>
+                      <prop type="string" name="hostId"/>
+                      <prop type="string" name="resourcePoolId"/>
+                    </prop>
+                    <prop readOnly="True" type="string" name="powerState"/>
+                    <prop readOnly="True" type="string" name="provisioningState"/>
+                    <prop type="string" name="resourcePoolId"/>
+                    <prop type="object" name="securityProfile">
+                      <prop type="object" name="uefiSettings">
+                        <prop type="boolean" name="secureBootEnabled"/>
+                      </prop>
+                    </prop>
+                    <prop type="string" name="smbiosUuid"/>
+                    <prop readOnly="True" type="array<object>" name="statuses">
+                      <item type="object">
+                        <prop readOnly="True" type="dateTime" name="lastUpdatedAt"/>
+                        <prop readOnly="True" type="string" name="message"/>
+                        <prop readOnly="True" type="string" name="reason"/>
+                        <prop readOnly="True" type="string" name="severity"/>
+                        <prop readOnly="True" type="string" name="status"/>
+                        <prop readOnly="True" type="string" name="type"/>
+                      </item>
+                    </prop>
+                    <prop type="object" name="storageProfile">
+                      <prop type="array<object>" name="disks">
+                        <item type="object">
+                          <prop type="integer32" name="controllerKey"/>
+                          <prop type="integer32" name="deviceKey"/>
+                          <prop type="string" name="deviceName"/>
+                          <prop type="string" name="diskMode">
+                            <enum>
+                              <item value="&quot;independent_nonpersistent&quot;"/>
+                              <item value="&quot;independent_persistent&quot;"/>
+                              <item value="&quot;persistent&quot;"/>
+                            </enum>
+                          </prop>
+                          <prop readOnly="True" type="string" name="diskObjectId"/>
+                          <prop type="integer32" name="diskSizeGB"/>
+                          <prop type="string" name="diskType">
+                            <enum>
+                              <item value="&quot;flat&quot;"/>
+                              <item value="&quot;pmem&quot;"/>
+                              <item value="&quot;rawphysical&quot;"/>
+                              <item value="&quot;rawvirtual&quot;"/>
+                              <item value="&quot;sesparse&quot;"/>
+                              <item value="&quot;sparse&quot;"/>
+                              <item value="&quot;unknown&quot;"/>
+                            </enum>
+                          </prop>
+                          <prop readOnly="True" type="string" name="label"/>
+                          <prop type="string" name="name"/>
+                          <prop type="integer32" name="unitNumber"/>
+                        </item>
+                      </prop>
+                      <prop readOnly="True" type="array<object>" name="scsiControllers">
+                        <item type="object">
+                          <prop type="integer32" name="busNumber"/>
+                          <prop type="integer32" name="controllerKey"/>
+                          <prop type="integer32" name="scsiCtlrUnitNumber"/>
+                          <prop type="string" name="sharing">
+                            <enum>
+                              <item value="&quot;noSharing&quot;"/>
+                              <item value="&quot;physicalSharing&quot;"/>
+                              <item value="&quot;virtualSharing&quot;"/>
+                            </enum>
+                          </prop>
+                          <prop type="string" name="type">
+                            <enum>
+                              <item value="&quot;buslogic&quot;"/>
+                              <item value="&quot;lsilogic&quot;"/>
+                              <item value="&quot;lsilogicsas&quot;"/>
+                              <item value="&quot;pvscsi&quot;"/>
+                            </enum>
+                          </prop>
+                        </item>
+                      </prop>
+                    </prop>
+                    <prop type="string" name="templateId"/>
+                    <prop readOnly="True" type="string" name="uuid"/>
+                    <prop type="string" name="vCenterId"/>
+                    <prop readOnly="True" type="string" name="vmId"/>
+                  </prop>
+                  <prop readOnly="True" type="object" name="systemData">
+                    <prop type="dateTime" name="createdAt"/>
+                    <prop type="string" name="createdBy"/>
+                    <prop type="string" name="createdByType">
+                      <enum>
+                        <item value="&quot;Application&quot;"/>
+                        <item value="&quot;Key&quot;"/>
+                        <item value="&quot;ManagedIdentity&quot;"/>
+                        <item value="&quot;User&quot;"/>
+                      </enum>
+                    </prop>
+                    <prop type="dateTime" name="lastModifiedAt"/>
+                    <prop type="string" name="lastModifiedBy"/>
+                    <prop type="string" name="lastModifiedByType">
+                      <enum>
+                        <item value="&quot;Application&quot;"/>
+                        <item value="&quot;Key&quot;"/>
+                        <item value="&quot;ManagedIdentity&quot;"/>
+                        <item value="&quot;User&quot;"/>
+                      </enum>
+                    </prop>
+                  </prop>
+                  <prop type="object" name="tags">
+                    <additionalProp>
+                      <item type="string"/>
+                    </additionalProp>
+                  </prop>
+                  <prop readOnly="True" type="string" name="type"/>
+                </schema>
+              </json>
+            </body>
+          </response>
+          <response isError="True">
+            <body>
+              <json>
+                <schema type="@MgmtErrorFormat"/>
+              </json>
+            </body>
+          </response>
+        </http>
+      </operation>
+      <operation>
+        <instanceUpdate ref="$Instance">
+          <json>
+            <schema type="object" name="body" clientFlatten="True">
+              <prop type="object" name="extendedLocation" arg="$body.extendedLocation">
+                <prop type="string" name="name" arg="$body.extendedLocation.name"/>
+                <prop type="string" name="type" arg="$body.extendedLocation.type"/>
+              </prop>
+              <prop type="object" name="identity" arg="$body.identity">
+                <prop type="string" name="type" arg="$body.identity.type" required="True">
+                  <enum>
+                    <item value="&quot;None&quot;"/>
+                    <item value="&quot;SystemAssigned&quot;"/>
+                  </enum>
+                </prop>
+              </prop>
+              <prop type="string" name="kind" arg="$body.kind"/>
+              <prop type="object" name="properties" required="True" clientFlatten="True">
+                <prop type="string" name="firmwareType" arg="$body.properties.firmwareType">
+                  <enum>
+                    <item value="&quot;bios&quot;"/>
+                    <item value="&quot;efi&quot;"/>
+                  </enum>
+                </prop>
+                <prop type="object" name="guestAgentProfile" arg="$body.properties.guestAgentProfile">
+                  <prop type="string" name="clientPublicKey" arg="$body.properties.guestAgentProfile.clientPublicKey"/>
+                </prop>
+                <prop type="object" name="hardwareProfile" arg="$body.properties.hardwareProfile">
+                  <prop type="integer32" name="memorySizeMB" arg="$body.properties.hardwareProfile.memorySizeMB"/>
+                  <prop type="integer32" name="numCPUs" arg="$body.properties.hardwareProfile.numCPUs"/>
+                  <prop type="integer32" name="numCoresPerSocket" arg="$body.properties.hardwareProfile.numCoresPerSocket"/>
+                </prop>
+                <prop type="string" name="inventoryItemId" arg="$body.properties.inventoryItemId"/>
+                <prop type="string" name="moRefId" arg="$body.properties.moRefId"/>
+                <prop type="object" name="networkProfile" arg="$body.properties.networkProfile">
+                  <prop type="array<object>" name="networkInterfaces" arg="$body.properties.networkProfile.networkInterfaces">
+                    <item type="object">
+                      <prop type="integer32" name="deviceKey" arg="$body.properties.networkProfile.networkInterfaces[].deviceKey"/>
+                      <prop type="object" name="ipSettings" arg="$body.properties.networkProfile.networkInterfaces[].ipSettings">
+                        <prop type="string" name="allocationMethod" arg="$body.properties.networkProfile.networkInterfaces[].ipSettings.allocationMethod">
+                          <enum>
+                            <item value="&quot;dynamic&quot;"/>
+                            <item value="&quot;linklayer&quot;"/>
+                            <item value="&quot;other&quot;"/>
+                            <item value="&quot;random&quot;"/>
+                            <item value="&quot;static&quot;"/>
+                            <item value="&quot;unset&quot;"/>
+                          </enum>
+                        </prop>
+                        <prop type="array<string>" name="dnsServers" arg="$body.properties.networkProfile.networkInterfaces[].ipSettings.dnsServers">
+                          <item type="string"/>
+                        </prop>
+                        <prop type="array<string>" name="gateway" arg="$body.properties.networkProfile.networkInterfaces[].ipSettings.gateway">
+                          <item type="string"/>
+                        </prop>
+                        <prop type="string" name="ipAddress" arg="$body.properties.networkProfile.networkInterfaces[].ipSettings.ipAddress"/>
+                        <prop type="string" name="subnetMask" arg="$body.properties.networkProfile.networkInterfaces[].ipSettings.subnetMask"/>
+                      </prop>
+                      <prop type="string" name="name" arg="$body.properties.networkProfile.networkInterfaces[].name"/>
+                      <prop type="string" name="networkId" arg="$body.properties.networkProfile.networkInterfaces[].networkId"/>
+                      <prop type="string" name="nicType" arg="$body.properties.networkProfile.networkInterfaces[].nicType">
+                        <enum>
+                          <item value="&quot;e1000&quot;"/>
+                          <item value="&quot;e1000e&quot;"/>
+                          <item value="&quot;pcnet32&quot;"/>
+                          <item value="&quot;vmxnet&quot;"/>
+                          <item value="&quot;vmxnet2&quot;"/>
+                          <item value="&quot;vmxnet3&quot;"/>
+                        </enum>
+                      </prop>
+                      <prop type="string" name="powerOnBoot" arg="$body.properties.networkProfile.networkInterfaces[].powerOnBoot">
+                        <enum>
+                          <item value="&quot;disabled&quot;"/>
+                          <item value="&quot;enabled&quot;"/>
+                        </enum>
+                      </prop>
+                    </item>
+                  </prop>
+                </prop>
+                <prop type="object" name="osProfile" arg="$body.properties.osProfile">
+                  <prop type="string" name="adminPassword" arg="$body.properties.osProfile.adminPassword"/>
+                  <prop type="string" name="adminUsername" arg="$body.properties.osProfile.adminUsername"/>
+                  <prop type="string" name="computerName" arg="$body.properties.osProfile.computerName"/>
+                  <prop type="string" name="guestId" arg="$body.properties.osProfile.guestId"/>
+                  <prop type="object" name="linuxConfiguration" arg="$body.properties.osProfile.linuxConfiguration">
+                    <prop type="@PatchSettings_update" name="patchSettings" arg="$body.properties.osProfile.linuxConfiguration.patchSettings" clientFlatten="True"/>
+                  </prop>
+                  <prop type="string" name="osType" arg="$body.properties.osProfile.osType">
+                    <enum>
+                      <item value="&quot;Linux&quot;"/>
+                      <item value="&quot;Other&quot;"/>
+                      <item value="&quot;Windows&quot;"/>
+                    </enum>
+                  </prop>
+                  <prop type="object" name="windowsConfiguration" arg="$body.properties.osProfile.windowsConfiguration">
+                    <prop type="object" name="patchSettings" arg="$body.properties.osProfile.windowsConfiguration.patchSettings" cls="PatchSettings_update" clientFlatten="True">
+                      <prop type="string" name="assessmentMode" arg="@PatchSettings_update.assessmentMode"/>
+                      <prop type="string" name="patchMode" arg="@PatchSettings_update.patchMode"/>
+                    </prop>
+                  </prop>
+                </prop>
+                <prop type="object" name="placementProfile" arg="$body.properties.placementProfile">
+                  <prop type="string" name="clusterId" arg="$body.properties.placementProfile.clusterId"/>
+                  <prop type="string" name="datastoreId" arg="$body.properties.placementProfile.datastoreId"/>
+                  <prop type="string" name="hostId" arg="$body.properties.placementProfile.hostId"/>
+                  <prop type="string" name="resourcePoolId" arg="$body.properties.placementProfile.resourcePoolId"/>
+                </prop>
+                <prop type="string" name="resourcePoolId" arg="$body.properties.resourcePoolId"/>
+                <prop type="object" name="securityProfile" arg="$body.properties.securityProfile">
+                  <prop type="object" name="uefiSettings" arg="$body.properties.securityProfile.uefiSettings">
+                    <prop type="boolean" name="secureBootEnabled" arg="$body.properties.securityProfile.uefiSettings.secureBootEnabled"/>
+                  </prop>
+                </prop>
+                <prop type="string" name="smbiosUuid" arg="$body.properties.smbiosUuid"/>
+                <prop type="object" name="storageProfile" arg="$body.properties.storageProfile">
+                  <prop type="array<object>" name="disks" arg="$body.properties.storageProfile.disks">
+                    <item type="object">
+                      <prop type="integer32" name="controllerKey" arg="$body.properties.storageProfile.disks[].controllerKey"/>
+                      <prop type="integer32" name="deviceKey" arg="$body.properties.storageProfile.disks[].deviceKey"/>
+                      <prop type="string" name="deviceName" arg="$body.properties.storageProfile.disks[].deviceName"/>
+                      <prop type="string" name="diskMode" arg="$body.properties.storageProfile.disks[].diskMode">
+                        <enum>
+                          <item value="&quot;independent_nonpersistent&quot;"/>
+                          <item value="&quot;independent_persistent&quot;"/>
+                          <item value="&quot;persistent&quot;"/>
+                        </enum>
+                      </prop>
+                      <prop type="integer32" name="diskSizeGB" arg="$body.properties.storageProfile.disks[].diskSizeGB"/>
+                      <prop type="string" name="diskType" arg="$body.properties.storageProfile.disks[].diskType">
+                        <enum>
+                          <item value="&quot;flat&quot;"/>
+                          <item value="&quot;pmem&quot;"/>
+                          <item value="&quot;rawphysical&quot;"/>
+                          <item value="&quot;rawvirtual&quot;"/>
+                          <item value="&quot;sesparse&quot;"/>
+                          <item value="&quot;sparse&quot;"/>
+                          <item value="&quot;unknown&quot;"/>
+                        </enum>
+                      </prop>
+                      <prop type="string" name="name" arg="$body.properties.storageProfile.disks[].name"/>
+                      <prop type="integer32" name="unitNumber" arg="$body.properties.storageProfile.disks[].unitNumber"/>
+                    </item>
+                  </prop>
+                </prop>
+                <prop type="string" name="templateId" arg="$body.properties.templateId"/>
+                <prop type="string" name="vCenterId" arg="$body.properties.vCenterId"/>
+              </prop>
+              <prop type="object" name="tags" arg="$body.tags">
+                <additionalProp>
+                  <item type="string"/>
+                </additionalProp>
+              </prop>
+            </schema>
+          </json>
+        </instanceUpdate>
+      </operation>
+      <operation operationId="VirtualMachines_CreateOrUpdate">
+        <longRunning finalStateVia="azure-async-operation"/>
+        <http path="/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ConnectedVMwarevSphere/virtualMachines/{virtualMachineName}">
+          <request method="put">
+            <path>
+              <param type="string" name="resourceGroupName" arg="$Path.resourceGroupName" required="True"/>
+              <param type="string" name="subscriptionId" arg="$Path.subscriptionId" required="True"/>
+              <param type="string" name="virtualMachineName" arg="$Path.virtualMachineName" required="True"/>
+            </path>
+            <query>
+              <const readOnly="True" const="True" type="string" name="api-version" required="True">
+                <default value="&quot;2022-07-15-preview&quot;"/>
+              </const>
+            </query>
+            <body>
+              <json ref="$Instance"/>
+            </body>
+          </request>
+          <response statusCode="200 201">
+            <body>
+              <json var="$Instance">
+                <schema type="@VirtualMachine_read"/>
+              </json>
+            </body>
+          </response>
+          <response isError="True">
+            <body>
+              <json>
+                <schema type="@MgmtErrorFormat"/>
+              </json>
+            </body>
+          </response>
+        </http>
+      </operation>
+      <output type="object" ref="$Instance" clientFlatten="True"/>
+    </command>
+  </commandGroup>
+</CodeGen>

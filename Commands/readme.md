@@ -17,6 +17,9 @@
 - [confidentialledger](/Commands/confidentialledger/readme.md)
 : Deploy and manage Azure confidential ledgers.
 
+- [connected-v-mwarev-sphere](/Commands/connected-v-mwarev-sphere/readme.md)
+: Manage Connected VMWare vSphere
+
 - [databricks](/Commands/databricks/readme.md)
 : Manage databricks workspaces.
 
@@ -40,6 +43,12 @@
 
 - [fluid-relay](/Commands/fluid-relay/readme.md)
 : Manage Fluid Relay
+
+- [hybrid-compute](/Commands/hybrid-compute/readme.md)
+: Manage Hybrid Compute resources
+
+- [hybrid-connectivity](/Commands/hybrid-connectivity/readme.md)
+: Manage Hybrid Connectivity Resources
 
 - [load](/Commands/load/readme.md)
 : Manage Azure Load Testing resources.

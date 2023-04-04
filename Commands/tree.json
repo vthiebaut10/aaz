@@ -2476,6 +2476,115 @@
           "confidentialledger"
         ]
       },
+      "connected-v-mwarev-sphere": {
+        "commandGroups": {
+          "virtual-machine": {
+            "commands": {
+              "create": {
+                "help": {
+                  "short": "Create virtual machine."
+                },
+                "names": [
+                  "connected-v-mwarev-sphere",
+                  "virtual-machine",
+                  "create"
+                ],
+                "versions": [
+                  {
+                    "name": "2022-07-15-preview",
+                    "resources": [
+                      {
+                        "id": "/subscriptions/{}/resourcegroups/{}/providers/microsoft.connectedvmwarevsphere/virtualmachines/{}",
+                        "plane": "mgmt-plane",
+                        "version": "2022-07-15-preview"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "delete": {
+                "help": {
+                  "short": "Delete virtual machine DELETE method."
+                },
+                "names": [
+                  "connected-v-mwarev-sphere",
+                  "virtual-machine",
+                  "delete"
+                ],
+                "versions": [
+                  {
+                    "name": "2022-07-15-preview",
+                    "resources": [
+                      {
+                        "id": "/subscriptions/{}/resourcegroups/{}/providers/microsoft.connectedvmwarevsphere/virtualmachines/{}",
+                        "plane": "mgmt-plane",
+                        "version": "2022-07-15-preview"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "show": {
+                "help": {
+                  "short": "Get virtual machine GET method."
+                },
+                "names": [
+                  "connected-v-mwarev-sphere",
+                  "virtual-machine",
+                  "show"
+                ],
+                "versions": [
+                  {
+                    "name": "2022-07-15-preview",
+                    "resources": [
+                      {
+                        "id": "/subscriptions/{}/resourcegroups/{}/providers/microsoft.connectedvmwarevsphere/virtualmachines/{}",
+                        "plane": "mgmt-plane",
+                        "version": "2022-07-15-preview"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "update": {
+                "help": {
+                  "short": "Update virtual machine."
+                },
+                "names": [
+                  "connected-v-mwarev-sphere",
+                  "virtual-machine",
+                  "update"
+                ],
+                "versions": [
+                  {
+                    "name": "2022-07-15-preview",
+                    "resources": [
+                      {
+                        "id": "/subscriptions/{}/resourcegroups/{}/providers/microsoft.connectedvmwarevsphere/virtualmachines/{}",
+                        "plane": "mgmt-plane",
+                        "version": "2022-07-15-preview"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "help": {
+              "short": "Manage Connected VMware vSphere VMs"
+            },
+            "names": [
+              "connected-v-mwarev-sphere",
+              "virtual-machine"
+            ]
+          }
+        },
+        "help": {
+          "short": "Manage Connected VMWare vSphere"
+        },
+        "names": [
+          "connected-v-mwarev-sphere"
+        ]
+      },
       "databricks": {
         "commandGroups": {
           "access-connector": {
@@ -9038,6 +9147,375 @@
         },
         "names": [
           "fluid-relay"
+        ]
+      },
+      "hybrid-compute": {
+        "commandGroups": {
+          "machine": {
+            "commands": {
+              "create": {
+                "help": {
+                  "short": "Create operation to create or update a hybrid machine. Please note some properties can be set only during machine creation."
+                },
+                "names": [
+                  "hybrid-compute",
+                  "machine",
+                  "create"
+                ],
+                "versions": [
+                  {
+                    "name": "2022-11-10",
+                    "resources": [
+                      {
+                        "id": "/subscriptions/{}/resourcegroups/{}/providers/microsoft.hybridcompute/machines/{}",
+                        "plane": "mgmt-plane",
+                        "version": "2022-11-10"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "delete": {
+                "help": {
+                  "short": "Delete operation to delete a hybrid machine."
+                },
+                "names": [
+                  "hybrid-compute",
+                  "machine",
+                  "delete"
+                ],
+                "versions": [
+                  {
+                    "name": "2022-11-10",
+                    "resources": [
+                      {
+                        "id": "/subscriptions/{}/resourcegroups/{}/providers/microsoft.hybridcompute/machines/{}",
+                        "plane": "mgmt-plane",
+                        "version": "2022-11-10"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "show": {
+                "help": {
+                  "short": "Get information about the model view or the instance view of a hybrid machine."
+                },
+                "names": [
+                  "hybrid-compute",
+                  "machine",
+                  "show"
+                ],
+                "versions": [
+                  {
+                    "name": "2022-11-10",
+                    "resources": [
+                      {
+                        "id": "/subscriptions/{}/resourcegroups/{}/providers/microsoft.hybridcompute/machines/{}",
+                        "plane": "mgmt-plane",
+                        "version": "2022-11-10"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "update": {
+                "help": {
+                  "short": "Update operation to create or update a hybrid machine. Please note some properties can be set only during machine creation."
+                },
+                "names": [
+                  "hybrid-compute",
+                  "machine",
+                  "update"
+                ],
+                "versions": [
+                  {
+                    "name": "2022-11-10",
+                    "resources": [
+                      {
+                        "id": "/subscriptions/{}/resourcegroups/{}/providers/microsoft.hybridcompute/machines/{}",
+                        "plane": "mgmt-plane",
+                        "version": "2022-11-10"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "help": {
+              "short": "Manage Arc Servers"
+            },
+            "names": [
+              "hybrid-compute",
+              "machine"
+            ]
+          }
+        },
+        "help": {
+          "short": "Manage Hybrid Compute resources"
+        },
+        "names": [
+          "hybrid-compute"
+        ]
+      },
+      "hybrid-connectivity": {
+        "commandGroups": {
+          "endpoint": {
+            "commandGroups": {
+              "service-configuration": {
+                "commands": {
+                  "create": {
+                    "help": {
+                      "short": "Create a service in serviceConfiguration for the endpoint resource."
+                    },
+                    "names": [
+                      "hybrid-connectivity",
+                      "endpoint",
+                      "service-configuration",
+                      "create"
+                    ],
+                    "versions": [
+                      {
+                        "name": "2023-03-15",
+                        "resources": [
+                          {
+                            "id": "/{resourceuri}/providers/microsoft.hybridconnectivity/endpoints/{}/serviceconfigurations/{}",
+                            "plane": "mgmt-plane",
+                            "version": "2023-03-15"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "delete": {
+                    "help": {
+                      "short": "Delete the service details to the target resource."
+                    },
+                    "names": [
+                      "hybrid-connectivity",
+                      "endpoint",
+                      "service-configuration",
+                      "delete"
+                    ],
+                    "versions": [
+                      {
+                        "name": "2023-03-15",
+                        "resources": [
+                          {
+                            "id": "/{resourceuri}/providers/microsoft.hybridconnectivity/endpoints/{}/serviceconfigurations/{}",
+                            "plane": "mgmt-plane",
+                            "version": "2023-03-15"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "list": {
+                    "help": {
+                      "short": "List to enumerate registered services in service configurations under a Endpoint Resource"
+                    },
+                    "names": [
+                      "hybrid-connectivity",
+                      "endpoint",
+                      "service-configuration",
+                      "list"
+                    ],
+                    "versions": [
+                      {
+                        "name": "2023-03-15",
+                        "resources": [
+                          {
+                            "id": "/{resourceuri}/providers/microsoft.hybridconnectivity/endpoints/{}/serviceconfigurations",
+                            "plane": "mgmt-plane",
+                            "version": "2023-03-15"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "show": {
+                    "help": {
+                      "short": "Get the details about the service to the resource."
+                    },
+                    "names": [
+                      "hybrid-connectivity",
+                      "endpoint",
+                      "service-configuration",
+                      "show"
+                    ],
+                    "versions": [
+                      {
+                        "name": "2023-03-15",
+                        "resources": [
+                          {
+                            "id": "/{resourceuri}/providers/microsoft.hybridconnectivity/endpoints/{}/serviceconfigurations/{}",
+                            "plane": "mgmt-plane",
+                            "version": "2023-03-15"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "update": {
+                    "help": {
+                      "short": "Update a service in serviceConfiguration for the endpoint resource."
+                    },
+                    "names": [
+                      "hybrid-connectivity",
+                      "endpoint",
+                      "service-configuration",
+                      "update"
+                    ],
+                    "versions": [
+                      {
+                        "name": "2023-03-15",
+                        "resources": [
+                          {
+                            "id": "/{resourceuri}/providers/microsoft.hybridconnectivity/endpoints/{}/serviceconfigurations/{}",
+                            "plane": "mgmt-plane",
+                            "version": "2023-03-15"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "help": {
+                  "short": "Manage Service Configuration for Endpoints"
+                },
+                "names": [
+                  "hybrid-connectivity",
+                  "endpoint",
+                  "service-configuration"
+                ]
+              }
+            },
+            "commands": {
+              "create": {
+                "help": {
+                  "short": "Create the endpoint to the target resource."
+                },
+                "names": [
+                  "hybrid-connectivity",
+                  "endpoint",
+                  "create"
+                ],
+                "versions": [
+                  {
+                    "name": "2023-03-15",
+                    "resources": [
+                      {
+                        "id": "/{resourceuri}/providers/microsoft.hybridconnectivity/endpoints/{}",
+                        "plane": "mgmt-plane",
+                        "version": "2023-03-15"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "delete": {
+                "help": {
+                  "short": "Delete the endpoint access to the target resource."
+                },
+                "names": [
+                  "hybrid-connectivity",
+                  "endpoint",
+                  "delete"
+                ],
+                "versions": [
+                  {
+                    "name": "2023-03-15",
+                    "resources": [
+                      {
+                        "id": "/{resourceuri}/providers/microsoft.hybridconnectivity/endpoints/{}",
+                        "plane": "mgmt-plane",
+                        "version": "2023-03-15"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "list-credential": {
+                "help": {
+                  "short": "Gets the endpoint access credentials to the resource."
+                },
+                "names": [
+                  "hybrid-connectivity",
+                  "endpoint",
+                  "list-credential"
+                ],
+                "versions": [
+                  {
+                    "name": "2023-03-15",
+                    "resources": [
+                      {
+                        "id": "/{resourceuri}/providers/microsoft.hybridconnectivity/endpoints/{}/listcredentials",
+                        "plane": "mgmt-plane",
+                        "version": "2023-03-15"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "show": {
+                "help": {
+                  "short": "Get the endpoint to the resource."
+                },
+                "names": [
+                  "hybrid-connectivity",
+                  "endpoint",
+                  "show"
+                ],
+                "versions": [
+                  {
+                    "name": "2023-03-15",
+                    "resources": [
+                      {
+                        "id": "/{resourceuri}/providers/microsoft.hybridconnectivity/endpoints/{}",
+                        "plane": "mgmt-plane",
+                        "version": "2023-03-15"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "update": {
+                "help": {
+                  "short": "Update the endpoint to the target resource."
+                },
+                "names": [
+                  "hybrid-connectivity",
+                  "endpoint",
+                  "update"
+                ],
+                "versions": [
+                  {
+                    "name": "2023-03-15",
+                    "resources": [
+                      {
+                        "id": "/{resourceuri}/providers/microsoft.hybridconnectivity/endpoints/{}",
+                        "plane": "mgmt-plane",
+                        "version": "2023-03-15"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "help": {
+              "short": "Manage Hybrid Connectivity Endpoints"
+            },
+            "names": [
+              "hybrid-connectivity",
+              "endpoint"
+            ]
+          }
+        },
+        "help": {
+          "short": "Manage Hybrid Connectivity Resources"
+        },
+        "names": [
+          "hybrid-connectivity"
         ]
       },
       "load": {
