@@ -9172,6 +9172,16 @@
                         "version": "2022-11-10"
                       }
                     ]
+                  },
+                  {
+                    "name": "2022-12-27-preview",
+                    "resources": [
+                      {
+                        "id": "/subscriptions/{}/resourcegroups/{}/providers/microsoft.hybridcompute/machines/{}",
+                        "plane": "mgmt-plane",
+                        "version": "2022-12-27-preview"
+                      }
+                    ]
                   }
                 ]
               },
@@ -9192,6 +9202,16 @@
                         "id": "/subscriptions/{}/resourcegroups/{}/providers/microsoft.hybridcompute/machines/{}",
                         "plane": "mgmt-plane",
                         "version": "2022-11-10"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "2022-12-27-preview",
+                    "resources": [
+                      {
+                        "id": "/subscriptions/{}/resourcegroups/{}/providers/microsoft.hybridcompute/machines/{}",
+                        "plane": "mgmt-plane",
+                        "version": "2022-12-27-preview"
                       }
                     ]
                   }
@@ -9216,6 +9236,16 @@
                         "version": "2022-11-10"
                       }
                     ]
+                  },
+                  {
+                    "name": "2022-12-27-preview",
+                    "resources": [
+                      {
+                        "id": "/subscriptions/{}/resourcegroups/{}/providers/microsoft.hybridcompute/machines/{}",
+                        "plane": "mgmt-plane",
+                        "version": "2022-12-27-preview"
+                      }
+                    ]
                   }
                 ]
               },
@@ -9236,6 +9266,16 @@
                         "id": "/subscriptions/{}/resourcegroups/{}/providers/microsoft.hybridcompute/machines/{}",
                         "plane": "mgmt-plane",
                         "version": "2022-11-10"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "2022-12-27-preview",
+                    "resources": [
+                      {
+                        "id": "/subscriptions/{}/resourcegroups/{}/providers/microsoft.hybridcompute/machines/{}",
+                        "plane": "mgmt-plane",
+                        "version": "2022-12-27-preview"
                       }
                     ]
                   }
